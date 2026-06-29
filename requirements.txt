@@ -1,0 +1,23 @@
+# Vector-ARC dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Embedding ──────────────────────────────────────────────────────────────────
+sentence-transformers==2.7.0
+numpy==1.26.4
+torch==2.3.1
+
+# ── Cold storage ───────────────────────────────────────────────────────────────
+rank_bm25==0.2.2
+datasets==2.19.1
+
+# ── LLM (OpenAI-compatible — works for Groq, SiliconFlow, OpenRouter) ─────────
+openai>=1.30.0
+
+# ── LLM (Google Gemini — only needed if LLM_PROVIDER=gemini in .env) ──────────
+google-generativeai==0.5.2
+
+# ── Benchmarking & reporting ───────────────────────────────────────────────────
+pandas==2.2.2
+
+# ── Environment config ─────────────────────────────────────────────────────────
+python-dotenv==1.0.1
