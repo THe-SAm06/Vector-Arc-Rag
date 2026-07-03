@@ -1,18 +1,18 @@
 Step,Phase,Topic,Query_Snippet,Expected,Actual,Correct,Cache_Hit,Latency_ms,T1_Size,T2_Size,B1_Size,B2_Size,Hot_Total,Boundary_P,Hot_Memory_Bytes,Ghost_Memory_Bytes
-1,1 · Cold Start,A,Microstructural development of human newborn cerebral white …,MISS,MISS,True,False,800.4665,1,0,0,0,1,0,3528,0
-2,1 · Cold Start,B,The mammalian target of rapamycin signaling pathway mediates…,MISS,MISS,True,False,18.601,2,0,0,0,2,0,6998,0
-3,1 · Cold Start,C,Rank Signaling Links the Development of Invariant γδ T Cell…,MISS,MISS,True,False,12.5906,3,0,0,0,3,0,10988,0
-4,1 · Cold Start,D,Implementing the ESHRE 'poor responder' criteria in research…,MISS,MISS,True,False,13.4311,4,0,0,0,4,0,13627,0
-5,1 · Cold Start,E,Relapse specific mutations in NT5C2 in childhood acute lymph…,MISS,MISS,True,False,14.0914,5,0,0,0,5,0,16436,0
-6,2 · Recency Hit,A,Microstructural development of human newborn cerebral white …,HIT,HIT,True,True,12.5344,4,1,0,0,5,0,16436,0
-7,2 · Recency Hit,B,The mammalian target of rapamycin signaling pathway mediates…,HIT,HIT,True,True,14.8095,3,2,0,0,5,0,16436,0
-8,2 · Recency Hit,C,Rank Signaling Links the Development of Invariant γδ T Cell…,HIT,HIT,True,True,16.4457,2,3,0,0,5,0,16436,0
-9,3 · Frequency Hit,A,Microstructural development of human newborn cerebral white …,HIT,HIT,True,True,16.5788,2,3,0,0,5,0,16436,0
-10,3 · Frequency Hit,B,The mammalian target of rapamycin signaling pathway mediates…,HIT,HIT,True,True,14.859,2,3,0,0,5,0,16436,0
-11,3 · Frequency Hit,C,Rank Signaling Links the Development of Invariant γδ T Cell…,HIT,HIT,True,True,13.5466,2,3,0,0,5,0,16436,0
-12,4 · Eviction,F,Localization of a gene for partial epilepsy to chromosome 10…,MISS,MISS,True,False,16.2877,2,3,1,0,5,0,16983,65
-13,4 · Eviction,G,Endothelium-mediated relaxation of porcine collateral-depend…,MISS,MISS,True,False,15.4634,2,3,2,0,5,0,17830,130
-14,4 · Eviction,H,Pseudoknots: RNA Structures with Diverse Functions - RNA mol…,MISS,MISS,True,False,17.6597,2,3,3,0,5,0,20378,195
-15,5 · Ghost / Adapt,D*,Implementing the ESHRE 'poor responder' criteria in research…,MISS,MISS,True,False,17.4545,1,4,3,0,5,1,19361,195
-16,5 · Ghost / Adapt,E*,Relapse specific mutations in NT5C2 in childhood acute lymph…,MISS,MISS,True,False,18.0364,1,4,2,1,5,2,18642,195
-17,6 · Novel Miss,novel,quantum entanglement effects in biological neural tissue syn…,MISS,MISS,True,False,14.6338,2,3,2,2,5,2,18381,260
+1,1 · Cold Start,A,Microstructural development of human newborn cerebral white …,MISS,MISS,True,False,857.1403,1,0,0,0,1,0,3577,0
+2,1 · Cold Start,B,The mammalian target of rapamycin signaling pathway mediates…,MISS,MISS,True,False,39.1753,2,0,0,0,2,0,7096,0
+3,1 · Cold Start,C,Rank Signaling Links the Development of Invariant γδ T Cell…,MISS,MISS,True,False,10.2508,3,0,0,0,3,0,11135,0
+4,1 · Cold Start,D,Implementing the ESHRE 'poor responder' criteria in research…,MISS,MISS,True,False,8.8248,4,0,0,0,4,0,13823,0
+5,1 · Cold Start,E,Relapse specific mutations in NT5C2 in childhood acute lymph…,MISS,MISS,True,False,9.8348,5,0,0,0,5,0,16681,0
+6,2 · Recency Hit,A,Microstructural development of human newborn cerebral white …,HIT,HIT,True,True,7.2958,4,1,0,0,5,0,16681,0
+7,2 · Recency Hit,B,The mammalian target of rapamycin signaling pathway mediates…,HIT,HIT,True,True,8.3708,3,2,0,0,5,0,16681,0
+8,2 · Recency Hit,C,Rank Signaling Links the Development of Invariant γδ T Cell…,HIT,HIT,True,True,6.7504,2,3,0,0,5,0,16681,0
+9,3 · Frequency Hit,A,Microstructural development of human newborn cerebral white …,HIT,HIT,True,True,9.9529,2,3,0,0,5,0,16681,0
+10,3 · Frequency Hit,B,The mammalian target of rapamycin signaling pathway mediates…,HIT,HIT,True,True,8.6533,2,3,0,0,5,0,16681,0
+11,3 · Frequency Hit,C,Rank Signaling Links the Development of Invariant γδ T Cell…,HIT,HIT,True,True,12.2072,2,3,0,0,5,0,16681,0
+12,4 · Eviction,F,Localization of a gene for partial epilepsy to chromosome 10…,MISS,MISS,True,False,15.4424,2,3,1,0,5,0,17228,73
+13,4 · Eviction,G,Endothelium-mediated relaxation of porcine collateral-depend…,MISS,MISS,True,False,9.4044,2,3,2,0,5,0,18075,146
+14,4 · Eviction,H,Pseudoknots: RNA Structures with Diverse Functions - RNA mol…,MISS,MISS,True,False,12.5593,2,3,3,0,5,0,20623,219
+15,5 · Ghost / Adapt,D*,Implementing the ESHRE 'poor responder' criteria in research…,MISS,MISS,True,False,9.5623,1,4,3,0,5,1,19606,219
+16,5 · Ghost / Adapt,E*,Relapse specific mutations in NT5C2 in childhood acute lymph…,MISS,MISS,True,False,9.7967,1,4,2,1,5,2,18887,219
+17,6 · Novel Miss,novel,quantum entanglement effects in biological neural tissue syn…,MISS,MISS,True,False,14.0333,2,3,2,2,5,2,18626,292

@@ -72,3 +72,4 @@ cover/
 # Data and metrics (optional, depending on if you want to track them)
 data/
 # metrics/
+cache_state/

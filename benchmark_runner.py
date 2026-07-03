@@ -43,6 +43,7 @@ from typing import Any, Dict, List
 import pandas as pd
 
 from src.rag_coordinator import AdaptiveRAGSystem
+from src.cold_storage import BM25ColdStorage
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Logging — INFO level so we see the coordinator's hit/miss log lines
@@ -65,7 +66,7 @@ CORPUS_PATH = "data/scifact_corpus.json"
 DEMO_CACHE_CAPACITY = 5
 
 # Q-to-Q similarity threshold — must be ≥ this to register a cache hit.
-DEMO_THRESHOLD = 0.85
+DEMO_THRESHOLD = 0.90
 
 METRICS_DIR = "metrics"
 OUTPUT_CSV = os.path.join(METRICS_DIR, "vector_arc_performance.csv")
@@ -203,6 +204,7 @@ class VectorARCBenchmark:
         system = AdaptiveRAGSystem(
             cache_capacity=DEMO_CACHE_CAPACITY,
             similarity_threshold=DEMO_THRESHOLD,
+            cold_storage=BM25ColdStorage(data_path=CORPUS_PATH),
         )
 
         records: List[Dict] = []
