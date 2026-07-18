@@ -1,0 +1,9 @@
+{
+  "paraphrase_hit_rate": 1.0,
+  "paraphrase_hits": 5,
+  "total_paraphrase_tests": 5,
+  "false_positives": 0,
+  "total_unrelated_tests": 5,
+  "false_positive_rate": 0.0,
+  "margin_rejections": 0
+}

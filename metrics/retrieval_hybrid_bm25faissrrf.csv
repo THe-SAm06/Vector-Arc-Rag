@@ -1,0 +1,101 @@
+qid,query,retrieved,hit@1,ndcg@10,mrr@10,latency_ms
+1,0-dimensional biomaterials show inductive properties.,17388232,0.0,0.0,0.0,16158.177
+3,"1,000 genomes project enables mapping of genetic sequence va",2739854,0.0,0.0,0.0,90.788
+5,1/2000 in UK have abnormal PrP positivity.,13734012,1.0,1.0,1.0,36.531
+13,5% of perinatal mortality is due to low birth weight.,7662395,0.0,0.0,0.0,49.89
+36,A deficiency of vitamin B12 increases blood levels of homocy,18557974,0.0,0.0,0.0,53.559
+42,A high microerythrocyte count raises vulnerability to severe,18174210,1.0,1.0,1.0,65.302
+48,"A total of 1,000 people in the UK are asymptomatic carriers ",18617259,0.0,0.0,0.0,62.855
+49,ADAR1 binds to Dicer to cleave pre-miRNA.,5953485,1.0,1.0,1.0,43.481
+50,AIRE is expressed in some skin tumors.,12580014,1.0,1.0,1.0,36.441
+51,ALDH1 expression is associated with better breast cancer out,45638119,1.0,1.0,1.0,46.96
+53,ALDH1 expression is associated with poorer prognosis in brea,45638119,1.0,1.0,1.0,57.121
+54,AMP-activated protein kinase (AMPK) activation increases inf,3973445,0.0,0.0,0.0,55.158
+56,APOE4 expression in iPSC-derived neurons increases AlphaBeta,4709641,1.0,1.0,1.0,54.512
+57,APOE4 expression in iPSC-derived neurons increases AlphaBeta,4709641,1.0,1.0,1.0,51.822
+70,Activation of PPM1D suppresses p53 function.,11903247,0.0,0.0,0.0,53.921
+72,Activator-inhibitor pairs are provided dorsally by Admpchord,6076903,1.0,1.0,1.0,32.47
+75,Active H. pylori urease has a polymeric structure that compr,4387784,1.0,1.0,1.0,44.703
+94,Albendazole is used to treat lymphatic filariasis.,1215116,1.0,1.0,1.0,33.176
+99,Alizarin forms hydrogen bonds with residues involved in PGAM,18810195,1.0,1.0,1.0,42.166
+100,All hematopoietic stem cells segregate their chromosomes ran,4381486,1.0,1.0,1.0,32.974
+113,Angiotensin converting enzyme inhibitors are associated with,6157837,1.0,1.0,1.0,36.264
+115,Anthrax spores can be disposed of easily after they are disp,33872649,1.0,1.0,1.0,45.252
+118,Antibiotic induced alterations in the gut microbiome reduce ,4465735,0.0,0.0,0.0,42.134
+124,Antiretroviral therapy reduces rates of tuberculosis across ,4883040,1.0,1.0,1.0,59.834
+127,Arginine 90 in p150n is important for interaction with EB1.,35231675,0.0,0.0,0.0,48.868
+128,Arterioles have a larger lumen diameter than venules.,23513718,0.0,0.0,0.0,35.872
+129,Articles published in open access format are less likely to ,27768226,1.0,1.0,1.0,54.156
+130,Articles published in open access format are more likely to ,27768226,1.0,1.0,1.0,41.554
+132,Aspirin inhibits the production of PGE2.,7613033,0.0,0.0,0.0,34.37
+133,Assembly of invadopodia is triggered by focal generation of ,12640810,1.0,0.3391602052736161,1.0,74.208
+137,Asymptomatic visual impairment screening in elderly populati,26016929,1.0,1.0,1.0,50.855
+141,Auditory entrainment is strengthened when people see congrue,14437255,1.0,0.6131471927654584,1.0,33.563
+142,Autologous transplantation of mesenchymal stem cells causes ,10582939,1.0,1.0,1.0,49.405
+143,Autologous transplantation of mesenchymal stem cells causes ,10582939,1.0,1.0,1.0,63.069
+146,Autologous transplantation of mesenchymal stem cells has low,10582939,1.0,1.0,1.0,42.975
+148,Autophagy declines in aged organisms.,1084345,1.0,1.0,1.0,22.589
+163,Bariatric surgery has a positive impact on mental health.,18872233,1.0,1.0,1.0,35.854
+171,Basophils counteract disease development in patients with sy,12670680,1.0,1.0,1.0,39.155
+179,Birth-weight is positively associated with breast cancer.,25973484,0.0,0.0,0.0,37.625
+180,Blocking the interaction between TDP-43 and respiratory comp,16966326,1.0,1.0,1.0,50.779
+183,Bone marrow cells contribute to adult macrophage compartment,12827098,1.0,1.0,1.0,36.363
+185,Breast cancer development is determined exclusively by genet,18340282,1.0,1.0,1.0,38.363
+198,CCL19 is absent within dLNs.,13778710,0.0,0.0,0.0,27.549
+208,CHEK2 is not associated with breast cancer.,13519661,1.0,1.0,1.0,28.619
+212,CR is associated with higher methylation age.,22038539,1.0,1.0,1.0,37.368
+213,CRP is not predictive of postoperative mortality following C,27054878,0.0,0.0,0.0,54.011
+216,CX3CR1 on the Th2 cells impairs T cell survival,21366394,1.0,1.0,1.0,55.114
+217,CX3CR1 on the Th2 cells promotes T cell survival,21366394,1.0,1.0,1.0,46.856
+218,CX3CR1 on the Th2 cells promotes airway inflammation.,21366394,1.0,1.0,1.0,45.473
+219,CX3CR1 on the Th2 cells suppresses airway inflammation.,21366394,1.0,1.0,1.0,52.246
+230,Carriers of the alcohol aldehyde dehydrogenase deficiency mu,3067015,1.0,1.0,1.0,37.972
+232,Cataract and trachoma are the primary cause of blindness in ,7655029,0.0,0.0,0.0,44.181
+233,Cell autonomous sex determination in somatic cells does not ,36708463,0.0,0.0,0.0,46.606
+236,Cell autonomous sex determination in somatic cells occurs in,4388470,1.0,1.0,1.0,45.679
+237,Cells lacking clpC have a defect in sporulation efficiency i,4942718,1.0,1.0,1.0,43.532
+238,Cells undergoing methionine restriction may activate miRNAs.,4463811,0.0,0.0,0.0,37.299
+239,Cellular aging closely links to an older appearance.,516867,0.0,0.0,0.0,38.682
+248,Chenodeosycholic acid treatment increases whole-body energy ,1568684,1.0,1.0,1.0,42.173
+249,Chenodeosycholic acid treatment reduces whole-body energy ex,1568684,1.0,1.0,1.0,40.574
+261,"Chronic aerobic exercise alters endothelial function, improv",46743299,0.0,0.0,0.0,60.901
+268,Cold exposure increases BAT recruitment.,970012,1.0,1.0,1.0,29.936
+269,Cold exposure reduces BAT recruitment.,970012,1.0,1.0,1.0,34.838
+274,Combination nicotine replacement therapies with varenicline ,11614737,1.0,1.0,1.0,68.413
+275,Combining phosphatidylinositide 3-kinase and MEK 1/2 inhibit,4961038,1.0,0.46927872602275644,1.0,42.921
+279,Commelina yellow mottle virus' (ComYMV) genome consists of 7,14376683,1.0,1.0,1.0,35.226
+294,Crossover hot spots are not found within gene promoters in S,27134931,0.0,0.0,0.0,41.597
+295,Crosstalk between dendritic cells (DCs) and innate lymphoid ,1022115,0.0,0.0,0.0,72.979
+298,Cytochrome c is released from the mitochondrial intermembran,39381118,1.0,1.0,1.0,46.837
+300,Cytosolic proteins bind to iron-responsive elements on mRNAs,16120395,0.0,0.0,0.0,64.6
+303,DMRT1 is a sex-determining gene that is epigenetically regul,4085204,0.0,0.0,0.0,65.161
+312,De novo assembly of sequence data has more specific contigs ,14464451,0.0,0.0,0.0,59.07
+314,Deamination of cytidine to uridine on the minus strand of vi,544971,0.0,0.0,0.0,44.846
+324,Deleting Raptor reduces G-CSF levels.,4658268,0.0,0.0,0.0,17.938
+327,Deletion of αvβ8 does not result in a spontaneous inflammato,17997584,1.0,1.0,1.0,36.423
+338,Dexamethasone decreases risk of postoperative bleeding.,23349986,1.0,1.0,1.0,24.613
+343,Diabetic patients with acute coronary syndrome experience in,5884524,1.0,0.6131471927654584,1.0,51.96
+350,Discrimination between the initiator and elongation tRNAs de,16927286,1.0,1.0,1.0,50.123
+354,Downregulation and mislocalization of Scribble prevents cell,8774475,1.0,1.0,1.0,40.709
+362,During the primary early antibody response activated B cells,38587347,1.0,1.0,1.0,87.131
+380,Enhanced early production of inflammatory chemokines improve,19005293,1.0,1.0,1.0,44.704
+384,Epidemiological disease burden from noncommunicable diseases,51972698,0.0,0.0,0.0,51.138
+385,Epigenetic modulating agents (EMAs) modulate antitumor immun,1032372,0.0,0.0,0.0,40.482
+386,Errors in peripheral IV drug administration are most common ,16495649,1.0,1.0,1.0,55.675
+388,Ethanol stress decreases the expression of IBP in bacteria.,21602220,0.0,0.0,0.0,60.891
+399,Exposure to fine particulate air pollution is relate to anxi,791050,1.0,1.0,1.0,55.83
+410,Febrile seizures increase the threshold for development of e,14924526,1.0,1.0,1.0,53.085
+411,Febrile seizures reduce the threshold for development of epi,14924526,1.0,1.0,1.0,56.627
+415,Female carriers of the Apolipoprotein E4 (APOE4) allele have,18852643,0.0,0.0,0.0,46.422
+421,Flexible molecules experience greater steric hindrance in th,44640124,0.0,0.0,0.0,45.485
+431,FoxO3a activation in neuronal death is mediated by reactive ,2543135,0.0,0.0,0.0,39.169
+436,Free histones are degraded by a Rad53-dependent mechanism on,14637235,1.0,1.0,1.0,35.666
+437,Functional consequences of genomic alterations due to Myelod,3391547,0.0,0.0,0.0,66.846
+439,Fz/PCP-dependent Pk localizes to the anterior membrane of ne,5395426,0.0,0.0,0.0,49.129
+440,Fz/PCP-dependent Pk localizes to the anterior membrane of no,4932668,0.0,0.0,0.0,45.691
+443,GATA-3 is important for hematopoietic stem cell (HSC) functi,10165258,1.0,1.0,1.0,31.87
+452,Gene expression does not vary appreciably across genetically,9154703,0.0,0.0,0.0,43.11
+475,Glycolysis is one of the primary glycometabolic pathways in ,195689757,0.0,0.0,0.0,39.155
+478,Golli-deficient T-cells prefer to differentiate into an aner,2506153,0.0,0.0,0.0,69.372
+491,HNF4A mutations can cause diabetes in mutant carriers by the,56893404,1.0,1.0,1.0,47.961
+501,Headaches are not correlated with cognitive impairment.,17930286,1.0,1.0,1.0,38.054

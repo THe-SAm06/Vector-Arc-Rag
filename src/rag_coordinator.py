@@ -124,19 +124,26 @@ class AdaptiveRAGSystem:
         data_path: str = "data/scifact_corpus.json",
         ttl_seconds: float = _DEFAULT_TTL_SECONDS,
     ):
-        self.cache = VectorARC(capacity=cache_capacity)
-        self.threshold     = similarity_threshold
-        self.margin_eps    = margin_epsilon
-        self.ttl_seconds   = ttl_seconds
+        self.cache      = VectorARC(capacity=cache_capacity)
+        self.threshold  = similarity_threshold
+        self.margin_eps = margin_epsilon
+        self.ttl_seconds = ttl_seconds
 
-        # Default to HybridColdStorage for best retrieval quality
+        # Initialise embedder FIRST so it can be shared with cold storage.
+        # Both components use the same EmbeddingEngine instance — guarantees
+        # the GPU model is loaded exactly once regardless of call order.
+        self.embedder = EmbeddingEngine()
+
+        # Default to HybridColdStorage; pass the shared embedder in.
         if cold_storage is not None:
             self.cold_storage: BaseColdStorage = cold_storage
         else:
-            # Lazy import avoids hard dependency on faiss when caller provides storage
             try:
                 from src.hybrid_cold_storage import HybridColdStorage
-                self.cold_storage = HybridColdStorage(data_path=data_path)
+                self.cold_storage = HybridColdStorage(
+                    data_path=data_path,
+                    embedder=self.embedder,   # ← shared instance, no duplicate loads
+                )
             except ImportError:
                 from src.cold_storage import BM25ColdStorage
                 logger.warning(
@@ -144,8 +151,6 @@ class AdaptiveRAGSystem:
                     "Install faiss-cpu for hybrid retrieval."
                 )
                 self.cold_storage = BM25ColdStorage(data_path=data_path)
-
-        self.embedder = EmbeddingEngine()
 
         # Telemetry — inspected by benchmark_runner
         self.metrics: Dict[str, int] = {
