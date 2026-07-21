@@ -1,0 +1,151 @@
+qid,query,retrieved,hit@1,ndcg@10,mrr@10,latency_ms
+test-environment-aeghhgwpe-pro02a,Being vegetarian helps the environment  Becoming a vegetarian is an environmenta,test-environment-aeghhgwpe-pro02a,0.0,0.0,0.0,21603.082
+test-environment-aeghhgwpe-pro01a,It is immoral to kill animals  As evolved human beings it is our moral duty to i,test-environment-aeghhgwpe-pro01a,0.0,0.0,0.0,984.045
+test-environment-aeghhgwpe-pro03a,Vegetarianism is healthier  There are significant health benefits to 'going vegg,test-environment-aeghhgwpe-pro03a,0.0,0.0,0.0,519.78
+test-environment-aeghhgwpe-pro04a,Being vegetarian reduces risks of food poisoning  Almost all dangerous types of ,test-environment-aeghhgwpe-pro04a,0.0,0.0,0.0,321.431
+test-environment-aeghhgwpe-con02a,There are problems with being vegetarian  A vegetarian or vegan diet may result ,test-environment-aeghhgwpe-con02a,0.0,0.0,0.0,281.928
+test-environment-aeghhgwpe-con03a,"Survival of the fittest  It is natural for human beings to farm, kill, and eat o",test-environment-aeghhgwpe-con03a,0.0,0.0,0.0,344.028
+test-environment-aeghhgwpe-con01a,Humans can choose their own nutrition plan  Humans are omnivores – we are meant ,test-environment-aeghhgwpe-con01a,0.0,0.0,0.0,523.062
+test-environment-assgbatj-pro02a,Animal research causes severe harm to the animals involved  The point of animal ,test-environment-assgbatj-pro02a,0.0,0.0,0.0,300.033
+test-environment-assgbatj-pro05a,It would send out a consistent message  Most countries have animal welfare laws ,test-environment-assgbatj-pro05a,0.0,0.0,0.0,182.428
+test-environment-assgbatj-pro01a,Animals shouldn’t be harmed  The difference between us and other animals is a ma,test-environment-assgbatj-pro01a,0.0,0.0,0.0,374.371
+test-environment-assgbatj-pro03a,It isn’t necessary  We don’t know how we will be able to develop new drugs witho,test-environment-assgbatj-pro03a,0.0,0.0,0.0,242.997
+test-environment-assgbatj-pro04a,Most animals can suffer more than some people  It’s possible to think of people ,test-environment-assgbatj-pro04a,0.0,0.0,0.0,255.063
+test-environment-assgbatj-con02a,"People will die if we don’t do animal testing  Every year, 23 new drugs are intr",test-environment-assgbatj-con02a,0.0,0.0,0.0,186.953
+test-environment-assgbatj-con05a,Research animals are well treated  Animals used in research generally don’t suff,test-environment-assgbatj-con05a,0.0,0.0,0.0,270.813
+test-environment-assgbatj-con04a,Animal research is only used when it’s needed  EU member states and the US have ,test-environment-assgbatj-con04a,0.0,0.0,0.0,246.759
+test-environment-assgbatj-con03a,Testing is needed for really new drugs  The real benefit of animal testing is ma,test-environment-assgbatj-con03a,0.0,0.0,0.0,259.491
+test-environment-assgbatj-con01a,"Animals don’t have human rights  Humans have large brains, form social groups, c",test-environment-assgbatj-con01a,0.0,0.0,0.0,177.865
+test-environment-aiahwagit-pro02a,"Poaching is becoming more advanced  A stronger, militarised approach is needed a",test-environment-aiahwagit-pro02a,0.0,0.0,0.0,284.687
+test-environment-aiahwagit-pro05a,The justice system does not currently work  A major failing in current anti-poac,test-environment-aiahwagit-pro05a,0.0,0.0,0.0,286.353
+test-environment-aiahwagit-pro01a,Natural habitats being are destroyed  A tougher approach to the protection of an,test-environment-aiahwagit-pro01a,0.0,0.0,0.0,271.94
+test-environment-aiahwagit-pro03a,Endangered animals are a source of pride for African countries  Endangered anima,test-environment-aiahwagit-pro03a,0.0,0.0,0.0,270.17
+test-environment-aiahwagit-pro04a,Poaching is linked to terrorism  Stronger protection of animals should be implem,test-environment-aiahwagit-pro04a,0.0,0.0,0.0,307.899
+test-environment-aiahwagit-con02a,Fewer human deaths  Fewer large beasts will lead to fewer deaths in Africa. Some,test-environment-aiahwagit-con02a,0.0,0.0,0.0,264.177
+test-environment-aiahwagit-con04a,Heavy handed approaches do not solve the motivations for poaching  Creating toug,test-environment-aiahwagit-con04a,0.0,0.0,0.0,369.034
+test-environment-aiahwagit-con03a,"Legalising the trade of horns, ivory, furs and pelts would be more effective  Ma",test-environment-aiahwagit-con03a,0.0,0.0,0.0,426.824
+test-environment-aiahwagit-con01a,African countries have little money to spare  Africa has some of the least devel,test-environment-aiahwagit-con01a,0.0,0.0,0.0,279.378
+test-environment-ehwsnwu-pro02a,Underground Nuclear Storage is Safe  Underground nuclear waste storage means tha,test-environment-ehwsnwu-pro02a,0.0,0.0,0.0,912.275
+test-environment-ehwsnwu-pro01a,Underground Nuclear Storage is Necessary  Even states without nuclear waste prog,test-environment-ehwsnwu-pro01a,0.0,0.0,0.0,620.318
+test-environment-ehwsnwu-con02a,There Are Better Alternatives to Underground Nuclear Waste Storage  France is th,test-environment-ehwsnwu-con02a,0.0,0.0,0.0,549.674
+test-environment-ehwsnwu-con03a,Nuclear waste should be reused to create more electricity.  There are new kinds ,test-environment-ehwsnwu-con03a,0.0,0.0,0.0,505.902
+test-environment-ehwsnwu-con01a,Underground Nuclear Storage is Expensive.  Underground nuclear storage is expens,test-environment-ehwsnwu-con01a,0.0,0.0,0.0,363.663
+test-environment-chbwtlgcc-pro02a,Developing world  Developing countries such as China and India are growing rapid,test-environment-chbwtlgcc-pro02a,0.0,0.0,0.0,303.067
+test-environment-chbwtlgcc-pro01a,450 PPM  The IPCC's Fourth Assessment Report determined that atmospheric GHG emi,test-environment-chbwtlgcc-pro01a,0.0,0.0,0.0,371.202
+test-environment-chbwtlgcc-pro03a,Failure to reach global accord  The Kyoto Protocol failed to reduce global GHG e,test-environment-chbwtlgcc-pro03a,0.0,0.0,0.0,471.758
+test-environment-chbwtlgcc-pro04a,Consequences of increased GHGs  Increased GHGs in the atmosphere have numerous s,test-environment-chbwtlgcc-pro04a,0.0,0.0,0.0,473.141
+test-environment-chbwtlgcc-con02a,Earth's Resiliency  All the conclusions about the effects of rising atmospheric ,test-environment-chbwtlgcc-con02a,0.0,0.0,0.0,340.62
+test-environment-chbwtlgcc-con03a,New Technology  Humanity has revolutionized the world repeatedly through such mo,test-environment-chbwtlgcc-con03a,0.0,0.0,0.0,382.34
+test-environment-chbwtlgcc-con01a,"Carbon Trading Schemes  The EU ETS is an example of a viable carbon market, it c",test-environment-chbwtlgcc-con01a,0.0,0.0,0.0,361.898
+test-environment-opecewiahw-pro02a,An immense boost to DRC’s economy  The Grand Inga dam would be an immense boost ,test-environment-opecewiahw-pro02a,0.0,0.0,0.0,325.906
+test-environment-opecewiahw-pro01a,The dam would power Africa  Only 29% of Sub Saharan Africa’s population has acce,test-environment-opecewiahw-pro01a,0.0,0.0,0.0,448.568
+test-environment-opecewiahw-pro03a,Will enable the rebuilding of DRC  DR Congo has been one of the most war ravaged,test-environment-opecewiahw-pro03a,0.0,0.0,0.0,461.973
+test-environment-opecewiahw-pro04a,A dam could make the Congo more usable  While the Congo is mostly navigable it i,test-environment-opecewiahw-pro04a,0.0,0.0,0.0,175.717
+test-environment-opecewiahw-con02a,A dam would damage the environment  Dams due to their generation of renewable el,test-environment-opecewiahw-con02a,0.0,0.0,0.0,280.1
+test-environment-opecewiahw-con04a,The cost is too high  The Grand Inga is ‘pie in the sky’ as the cost is too imme,test-environment-opecewiahw-con04a,0.0,0.0,0.0,347.112
+test-environment-opecewiahw-con03a,Dams displace communities  Dams result in the filling of a large reservoir behin,test-environment-opecewiahw-con03a,0.0,0.0,0.0,287.191
+test-environment-opecewiahw-con01a,Such a big project is beyond DRC’s capacity  The Grand Inga dam project is huge ,test-environment-opecewiahw-con01a,0.0,0.0,0.0,373.865
+test-health-hdond-pro02a,Prioritizing donors creates an incentive to become a donor  The greatest argumen,test-health-hdond-pro02a,0.0,0.0,0.0,533.419
+test-health-hdond-pro01a,A Practical Solution  There are many mechanisms by which this policy could be im,test-health-hdond-pro01a,0.0,0.0,0.0,605.05
+test-health-hdond-pro03a,Organ donors are more deserving of organs  Reciprocity is a basic moral principl,test-health-hdond-pro03a,0.0,0.0,0.0,496.008
+test-health-hdond-pro04a,"People ought to donate their organs anyway  Organ donation, in all its forms, sa",test-health-hdond-pro04a,0.0,0.0,0.0,386.947
+test-health-hdond-con02a,This system will punish people for a past decision they cannot now undo  Most fo,test-health-hdond-con02a,0.0,0.0,0.0,343.346
+test-health-hdond-con04a,People may have valid religious reasons not to donate organs  Many major religio,test-health-hdond-con04a,0.0,0.0,0.0,360.077
+test-health-hdond-con03a,Denying organs to non-donors is unduly coercive.  For the state to make organ do,test-health-hdond-con03a,0.0,0.0,0.0,421.676
+test-health-hdond-con01a,The right to access healthcare is absolute  Healthcare is a primary means by whi,test-health-hdond-con01a,0.0,0.0,0.0,512.021
+test-health-ppelfhwbpba-pro02a,"If personhood accrues at birth, then abortion after inducing birth is wrong  If ",test-health-ppelfhwbpba-pro02a,0.0,0.0,0.0,246.377
+test-health-ppelfhwbpba-pro01a,"The foetus feels pain  Partial-birth abortion is disgusting. Like all abortions,",test-health-ppelfhwbpba-pro01a,0.0,0.0,0.0,338.746
+test-health-ppelfhwbpba-pro03a,Abortion is wrong per se when there are alternatives such as adoption  Tragicall,test-health-ppelfhwbpba-pro03a,0.0,0.0,0.0,359.826
+test-health-ppelfhwbpba-pro04a,Banning partial birth abortions is in line with popular and accepted moral stand,test-health-ppelfhwbpba-pro04a,0.0,0.0,0.0,354.035
+test-health-ppelfhwbpba-con02a,Opposition to partial birth abortion is part of a strategy intended to ban abort,test-health-ppelfhwbpba-con02a,0.0,0.0,0.0,294.673
+test-health-ppelfhwbpba-con03a,Partial birth abortions are safer than any available alternative  The D&amp;X ab,test-health-ppelfhwbpba-con03a,0.0,0.0,0.0,383.606
+test-health-ppelfhwbpba-con01a,"The concept of ""foetal rights"" is an attack on the autonomy of women  The cultur",test-health-ppelfhwbpba-con01a,0.0,0.0,0.0,428.211
+test-health-dhgsshbesbc-pro02a,It’s in the interests of employees  It’s in the interests of the HIV positive em,test-health-dhgsshbesbc-pro02a,0.0,0.0,0.0,359.742
+test-health-dhgsshbesbc-pro01a,"It’s in the interests of employers  It’s in the interests of employers. A long, ",test-health-dhgsshbesbc-pro01a,0.0,0.0,0.0,486.409
+test-health-dhgsshbesbc-pro03a,It’s in the interests of co-workers  It’s in the interests of other workers. The,test-health-dhgsshbesbc-pro03a,0.0,0.0,0.0,387.794
+test-health-dhgsshbesbc-pro04a,Tackling HIV requires a responsible and active position by everyone  Businesses ,test-health-dhgsshbesbc-pro04a,0.0,0.0,0.0,306.976
+test-health-dhgsshbesbc-con02a,The risks of ignorance and prejudice are too high  This measure could be activel,test-health-dhgsshbesbc-con02a,0.0,0.0,0.0,506.792
+test-health-dhgsshbesbc-con03a,It is a disincentive to get tested in the first place  The requirement to disclo,test-health-dhgsshbesbc-con03a,0.0,0.0,0.0,260.31
+test-health-dhgsshbesbc-con01a,Employers have no right to private medical information  Employers have no right ,test-health-dhgsshbesbc-con01a,0.0,0.0,0.0,675.985
+test-health-dhiacihwph-pro02a,Savings can be used in other sections of medical care  The decreased cost of pha,test-health-dhiacihwph-pro02a,0.0,0.0,0.0,276.265
+test-health-dhiacihwph-pro01a,Easily affordable drugs will mean greater access  Generic drugs are much cheaper,test-health-dhiacihwph-pro01a,0.0,0.0,0.0,399.729
+test-health-dhiacihwph-pro03a,Reduce the prominence of bad and fake drugs  The increased availability of high ,test-health-dhiacihwph-pro03a,0.0,0.0,0.0,350.125
+test-health-dhiacihwph-pro04a,Unfair to apply same patent laws universally  It is unrealistic to expect poorer,test-health-dhiacihwph-pro04a,0.0,0.0,0.0,331.592
+test-health-dhiacihwph-con02a,Cheaper drugs aren’t trusted by consumers  The differences in price between gene,test-health-dhiacihwph-con02a,0.0,0.0,0.0,258.562
+test-health-dhiacihwph-con03a,Most vital drugs are already generic  Many drugs which are used in the treatment,test-health-dhiacihwph-con03a,0.0,0.0,0.0,315.558
+test-health-dhiacihwph-con01a,Dominance of generic drugs will reduce reinvestment and innovation in donating c,test-health-dhiacihwph-con01a,0.0,0.0,0.0,335.887
+test-health-ahiahbgbsp-pro02a,Reduce smoking  A ban on smoking in public places would help reduce the rates of,test-health-ahiahbgbsp-pro02a,0.0,0.0,0.0,349.963
+test-health-ahiahbgbsp-pro05a,Nip the problem in the bud  Smoking rates in Africa are relatively low; a range ,test-health-ahiahbgbsp-pro05a,0.0,0.0,0.0,340.184
+test-health-ahiahbgbsp-pro01a,Lower healthcare costs  Smoking caused disease causes large expenses for healthc,test-health-ahiahbgbsp-pro01a,0.0,0.0,0.0,598.857
+test-health-ahiahbgbsp-pro03a,Easy to introduce  A ban on smoking in public places would be simple to enforce ,test-health-ahiahbgbsp-pro03a,0.0,0.0,0.0,302.67
+test-health-ahiahbgbsp-pro04a,Reduces growth of tobacco  Less people smoking means less tobacco being purchase,test-health-ahiahbgbsp-pro04a,0.0,0.0,0.0,367.91
+test-health-ahiahbgbsp-con02a,Unenforceable  Smoking bans are often unenforceable in higher income countries. ,test-health-ahiahbgbsp-con02a,0.0,0.0,0.0,549.009
+test-health-ahiahbgbsp-con04a,"Pack labelling or taxation a better alternative  If it’s not enforceable, enforc",test-health-ahiahbgbsp-con04a,0.0,0.0,0.0,244.853
+test-health-ahiahbgbsp-con03a,Ban would harm the wider economy  A ban could harm the wider economy – from bars,test-health-ahiahbgbsp-con03a,0.0,0.0,0.0,355.675
+test-health-ahiahbgbsp-con01a,Paternalistic  Personal autonomy has to be the key to this debate. If people wan,test-health-ahiahbgbsp-con01a,0.0,0.0,0.0,247.708
+test-health-hgwhwbjfs-pro02a,Schools are the best place to create lasting lifestyle changes.  Schools are pla,test-health-hgwhwbjfs-pro02a,0.0,0.0,0.0,481.276
+test-health-hgwhwbjfs-pro01a,Schools need to practice what they preach  Under the pressure of increasing medi,test-health-hgwhwbjfs-pro01a,0.0,0.0,0.0,1158.799
+test-health-hgwhwbjfs-pro03a,Better nutrition leads to better students.  There is a growing body of evidence ,test-health-hgwhwbjfs-pro03a,0.0,0.0,0.0,472.506
+test-health-hgwhwbjfs-con02a,Targeting schools will be an ineffective strategy.  Schools may seem like a perf,test-health-hgwhwbjfs-con02a,0.0,0.0,0.0,710.106
+test-health-hgwhwbjfs-con04a,"Pupils will bring unhealthy food with them to schools.  Frequently, a ban- wheth",test-health-hgwhwbjfs-con04a,0.0,0.0,0.0,809.158
+test-health-hgwhwbjfs-con03a,“Junk food” sales are an important source of funding for schools.  An important ,test-health-hgwhwbjfs-con03a,0.0,0.0,0.0,572.922
+test-health-hgwhwbjfs-con01a,"Schools should educate about healthy choices, not make them on the students’ beh",test-health-hgwhwbjfs-con01a,0.0,0.0,0.0,994.549
+test-health-hpehwadvoee-pro02a,The guilt may be too heavy a burden for the relative who could have saved a life,test-health-hpehwadvoee-pro02a,0.0,0.0,0.0,402.511
+test-health-hpehwadvoee-pro05a,Greater awareness will increase donations  There is a clear need around the worl,test-health-hpehwadvoee-pro05a,0.0,0.0,0.0,516.719
+test-health-hpehwadvoee-pro01a,It is a natural thing to do  We are biologically programmed to want to preserve ,test-health-hpehwadvoee-pro01a,0.0,0.0,0.0,469.336
+test-health-hpehwadvoee-pro03a,"The right to individual self determination is a fundamental human right, equal t",test-health-hpehwadvoee-pro03a,0.0,0.0,0.0,488.332
+test-health-hpehwadvoee-pro04a,We should preserve the person with greater quality of life  We have to be able t,test-health-hpehwadvoee-pro04a,0.0,0.0,0.0,670.608
+test-health-hpehwadvoee-con02a,"The recipient is forced to receive the sacrifice of another  In many cases, the ",test-health-hpehwadvoee-con02a,0.0,0.0,0.0,486.683
+test-health-hpehwadvoee-con05a,Doctors should not be asked to take the moral burden of people who want to commi,test-health-hpehwadvoee-con05a,0.0,0.0,0.0,519.913
+test-health-hpehwadvoee-con04a,The role of society is to save lives not to assist in suicide  The purpose of so,test-health-hpehwadvoee-con04a,0.0,0.0,0.0,381.756
+test-health-hpehwadvoee-con03a,This would encourage coercion for some to die to save others  By allowing sacrif,test-health-hpehwadvoee-con03a,0.0,0.0,0.0,430.763
+test-health-hpehwadvoee-con01a,"Self-preservation is our primary moral duty  Many people, especially those who b",test-health-hpehwadvoee-con01a,0.0,0.0,0.0,565.536
+test-health-dhghwapgd-pro02a,"Allowing production of generic drugs saves lives, particularly in the developing",test-health-dhghwapgd-pro02a,0.0,0.0,0.0,994.908
+test-health-dhghwapgd-pro05a,"You cannot own an idea, and thus cannot hold patents, especially to vital drugs ",test-health-dhghwapgd-pro05a,0.0,0.0,0.0,672.096
+test-health-dhghwapgd-pro01a,The current patent system is unjust and creates perverse incentives that benefit,test-health-dhghwapgd-pro01a,0.0,0.0,0.0,685.45
+test-health-dhghwapgd-pro03a,Production of generic drugs reduce medical costs by allowing increased productio,test-health-dhghwapgd-pro03a,0.0,0.0,0.0,820.609
+test-health-dhghwapgd-pro04a,When generic drugs are legalized firms and individuals no longer feel the incent,test-health-dhghwapgd-pro04a,0.0,0.0,0.0,960.96
+test-health-dhghwapgd-con02a,Patent rights allow firms to more readily release their products and methods int,test-health-dhghwapgd-con02a,0.0,0.0,0.0,594.456
+test-health-dhghwapgd-con04a,Robust drug patent laws incentivize investment of time and money in developing n,test-health-dhghwapgd-con04a,0.0,0.0,0.0,1201.054
+test-health-dhghwapgd-con03a,"The product of a firm's intellectual endeavor is the property of that firm, and ",test-health-dhghwapgd-con03a,0.0,0.0,0.0,1177.945
+test-health-dhghwapgd-con01a,Generic drugs often prove to be less effective than their brand name counterpart,test-health-dhghwapgd-con01a,0.0,0.0,0.0,1094.101
+test-health-dhghhbampt-pro02a,Although there are many accounts of the efficacy of alternative cancer treatment,test-health-dhghhbampt-pro02a,0.0,0.0,0.0,770.82
+test-health-dhghhbampt-pro01a,"Many alternative remedies, such as homeopathy, offer nothing but a false hope an",test-health-dhghhbampt-pro01a,0.0,0.0,0.0,1411.579
+test-health-dhghhbampt-pro03a,Overwhelmingly alternative therapies are used in conjunction with established re,test-health-dhghhbampt-pro03a,0.0,0.0,0.0,1629.121
+test-health-dhghhbampt-con02a,The pharmaceutical and medical industries are worth billions of dollars annually,test-health-dhghhbampt-con02a,0.0,0.0,0.0,1120.326
+test-health-dhghhbampt-con03a,Alternative medical practitioners tend to spend more time with their patients an,test-health-dhghhbampt-con03a,0.0,0.0,0.0,688.194
+test-health-dhghhbampt-con01a,A huge number of fully accepted medical practices started being seen as somethin,test-health-dhghhbampt-con01a,0.0,0.0,0.0,837.175
+test-health-dhpelhbass-pro02a,Those who are in the late stages of a terminal disease have a horrific future ag,test-health-dhpelhbass-pro02a,0.0,0.0,0.0,1256.595
+test-health-dhpelhbass-pro01a,Every human being has a right to life  Perhaps the most basic and fundamental of,test-health-dhpelhbass-pro01a,0.0,0.0,0.0,776.26
+test-health-dhpelhbass-pro03a,"Suicide is a lonely, desperate act, carried out in secrecy and often as a cry fo",test-health-dhpelhbass-pro03a,0.0,0.0,0.0,538.921
+test-health-dhpelhbass-con02a,If someone is threatening to kill themselves it is your moral duty to try to sto,test-health-dhpelhbass-con02a,0.0,0.0,0.0,791.533
+test-health-dhpelhbass-con04a,It would have a damaging effect on society  Some people who do not agree with vo,test-health-dhpelhbass-con04a,0.0,0.0,0.0,496.458
+test-health-dhpelhbass-con03a,Only God can give and take away life  Life is Sacred so no one has the right to ,test-health-dhpelhbass-con03a,0.0,0.0,0.0,611.397
+test-health-dhpelhbass-con01a,It is vital that a doctor's role not be confused  The guiding principle of medic,test-health-dhpelhbass-con01a,0.0,0.0,0.0,520.753
+test-sport-aastshsrqsar-pro02a,Broadening participation  The talent pool in South African rugby is not as racia,test-sport-aastshsrqsar-pro02a,0.0,0.0,0.0,380.349
+test-sport-aastshsrqsar-pro01a,Radical action needed for racial equality in South Africa  It is plain for all t,test-sport-aastshsrqsar-pro01a,0.0,0.0,0.0,350.372
+test-sport-aastshsrqsar-pro03a,"Most South Africans support quotas  In 2006, the South African Social Attitudes ",test-sport-aastshsrqsar-pro03a,0.0,0.0,0.0,322.606
+test-sport-aastshsrqsar-con02a,IRB rules  Racial quotas are a breach of the views of the world governing body o,test-sport-aastshsrqsar-con02a,0.0,0.0,0.0,311.284
+test-sport-aastshsrqsar-con04a,Racial quotas don’t develop new players  The quota system could lead to moving p,test-sport-aastshsrqsar-con04a,0.0,0.0,0.0,300.676
+test-sport-aastshsrqsar-con03a,Quotas can drive players away.  Policies of racial quotas can have the effect of,test-sport-aastshsrqsar-con03a,0.0,0.0,0.0,315.4
+test-sport-aastshsrqsar-con01a,Meritocracy  It is a value of sport in general that it should be outside the sph,test-sport-aastshsrqsar-con01a,0.0,0.0,0.0,435.008
+test-sport-otshwbe2uuyt-pro02a,Boycotting Euro 2012 will highlight Ukraine’s backsliding on human rights  Europ,test-sport-otshwbe2uuyt-pro02a,0.0,0.0,0.0,612.104
+test-sport-otshwbe2uuyt-pro01a,Europe must not give approval to this regime.  Viktor Yanukovych fairly came to ,test-sport-otshwbe2uuyt-pro01a,0.0,0.0,0.0,790.974
+test-sport-otshwbe2uuyt-pro03a,Boycotting Euro 2012 is proportional  Diplomacy is necessary with any regime alm,test-sport-otshwbe2uuyt-pro03a,0.0,0.0,0.0,520.435
+test-sport-otshwbe2uuyt-con02a,A boycott won’t help resolve the issues at question  European leaders need to co,test-sport-otshwbe2uuyt-con02a,0.0,0.0,0.0,679.35
+test-sport-otshwbe2uuyt-con05a,Europe needs to prevent Russian influence in Ukraine  If Europe shuns Ukraine th,test-sport-otshwbe2uuyt-con05a,0.0,0.0,0.0,434.629
+test-sport-otshwbe2uuyt-con04a,Boycotts did not take place for the 2008 Olympics despite the far worst human ri,test-sport-otshwbe2uuyt-con04a,0.0,0.0,0.0,485.001
+test-sport-otshwbe2uuyt-con03a,The boycott would affect Poland and the Ukrainian people as well as Yanukovych  ,test-sport-otshwbe2uuyt-con03a,0.0,0.0,0.0,657.174
+test-sport-otshwbe2uuyt-con01a,This is a sports event not a political event  Sport and politics are separate an,test-sport-otshwbe2uuyt-con01a,0.0,0.0,0.0,445.018
+test-sport-ybfgsohbhog-pro02a,Hosting stimulates regeneration in local areas  Hosting stimulates regeneration.,test-sport-ybfgsohbhog-pro02a,0.0,0.0,0.0,652.781
+test-sport-ybfgsohbhog-pro01a,Hosting creates a 'feel-good' factor  Hosting creates a 'feel-good factor'. It i,test-sport-ybfgsohbhog-pro01a,0.0,0.0,0.0,376.787
+test-sport-ybfgsohbhog-pro03a,COUNTERPOINT Any large expenditure in one area will stimulate regeneration. Cons,test-sport-ybfgsohbhog-pro03a,0.0,0.0,0.0,491.95
+test-sport-ybfgsohbhog-pro04a,Hosting has wide-reaching economic benefits  Hosting creates an economic boost. ,test-sport-ybfgsohbhog-pro04a,0.0,0.0,0.0,385.619
+test-sport-ybfgsohbhog-con02a,"The bidding process is too long, tying up funds and land  The bidding process ta",test-sport-ybfgsohbhog-con02a,0.0,0.0,0.0,464.693
+test-sport-ybfgsohbhog-con03a,Hosting is very expensive  Hosting is very expensive. In recent times the Olympi,test-sport-ybfgsohbhog-con03a,0.0,0.0,0.0,419.764
+test-sport-ybfgsohbhog-con01a,Hosting only affects one city  In large countries like the United States or Chin,test-sport-ybfgsohbhog-con01a,0.0,0.0,0.0,459.935
+test-sport-tshbmlbscac-pro02a,"Collisions are a part of the game.  First, collisions are part of the tradition ",test-sport-tshbmlbscac-pro02a,0.0,0.0,0.0,840.66
+test-sport-tshbmlbscac-pro01a,"Collisions are exciting and fun to watch.  Baseball is a form of entertainment, ",test-sport-tshbmlbscac-pro01a,0.0,0.0,0.0,447.246
+test-sport-tshbmlbscac-pro03a,Collisions are not as dangerous as they’re feared to be.  Some hits lead to inju,test-sport-tshbmlbscac-pro03a,0.0,0.0,0.0,420.734
+test-sport-tshbmlbscac-pro04a,"Without collisions, either the catcher or the runner would have an enormous and ",test-sport-tshbmlbscac-pro04a,0.0,0.0,0.0,480.165
+test-sport-tshbmlbscac-con02a,Collisions are an example of violence that has no place in baseball.  Baseball i,test-sport-tshbmlbscac-con02a,0.0,0.0,0.0,287.996

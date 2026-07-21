@@ -1,0 +1,3 @@
+dataset,pipeline,n_docs,n_queries,hit_at_1,ndcg_at_10,mrr_at_10,p50_ms,p95_ms,index_build_s,corpus_ram_mb,cache_hit_rate,llm_calls_saved
+arguana,BM25 (baseline),8674,150,0.0,0.0,0.0,406.37,913.55,0.791,16.199,0.0,0
+arguana,Hybrid BM25+FAISS+RRF,8674,150,0.0,0.0,0.0,427.52,1108.52,20.185,12.706,0.0,0

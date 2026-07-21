@@ -1,0 +1,151 @@
+qid,query,retrieved,hit@1,ndcg@10,mrr@10,latency_ms
+78495383450e02c5fe817e408726134b3084905d,A Direct Search Method to solve Economic Dispatch Problem with Valve-Point Effec,86e87db2dab958f1bd5877dc7d5b8105d6e31e46,1.0,0.3391602052736161,1.0,12769.184
+7dcb308b9292a8bc87d6f7793d2ca5e0e19dfa40,Bearish-Bullish Sentiment Analysis on Financial Microblogs,97cb3258a85a447a61e3812846f7a6e72ff3c1e1,0.0,0.0,0.0,36.416
+8c872ecd87945e71fcd9fa1b6cb1133cfe805bf2,Predicting defects in SAP Java code: An experience report,2f2dbb88c9266356dfda696ed907067c1e42902c,0.0,0.0,0.0,31.755
+3a63667284dc8b9687ed1620406030bfe39af3c9,Active-Metric Learning for Classification of Remotely Sensed Hyperspectral Image,bf07d60ba6d6c6b8cabab72dfce06f203782df8f,1.0,0.3391602052736161,1.0,29.543
+071f47b7bc5830643e31dbed82e0375bf9b26559,Ad Hoc Retrieval Experiments Using WordNet and Automatically Constructed Thesaur,37b0f219c1f2fbc4b432b24a5fe91dd733f19b7f,1.0,0.3903800499921017,1.0,25.871
+ee9596725d1db17f2b1e2207dd3ea260343bfe4f,Underwater Acoustic Target Tracking: A Review,11897106a75d5ba3bf5fb4677943bd6f33daadf7,1.0,0.3391602052736161,1.0,27.151
+a65196dfff31425281c690a7f2ca65247147da6b,Unsupervised Diverse Colorization via Generative Adversarial Networks,0217fb2a54a4f324ddf82babc6ec6692a3f6194f,0.0,0.0,0.0,30.796
+a04b5b99f5d9d8748843e870536a4a9f65562012,Lane Detection ( Part I ) : Mono-Vision Based Method,87a1273dea59e3748372c5ea69488d70e9125046,0.0,0.0,0.0,38.279
+de8e80d409aaaa3244da4f2cb5b5bb053d453cee,Detection of distributed denial of service attacks using machine learning algori,aed183e7258aff722192ca8b2368b51a7f817b1a,0.0,0.0,0.0,54.33
+ae0fb9c6ebb8ce12610c477d2388447a13dc4694,Distributed Privacy-Preserving Collaborative Intrusion Detection Systems for VAN,6c7e55e3b53029296097ee07ba75b6b6a98b14e5,0.0,0.0,0.0,46.924
+648678f1edab0d2139958070744b826d2b24c79e,Social engineering attack framework,7c459c36e19629ff0dfb4bd0e541cc5d2d3f03e0,1.0,0.3391602052736161,1.0,22.958
+8a6080396fa7195c7c627bea4b2aeeb9ca39b5f8,A Biologically Plausible Learning Rule for Deep Learning in the Brain,cfad94900162ffcbc5a975e348a5cdccdc1e8b07,0.0,0.0,0.0,42.008
+4715401473dca02ebaa5bdd4d4003705ed91c380,Tampering with the Delivery of Blocks and Transactions in Bitcoin,5e86853f533c88a1996455d955a2e20ac47b3878,1.0,0.3391602052736161,1.0,40.461
+6519bf5580fcdcc9c50fd72c6c8dc5d040d443e8,A survey of multi-source energy harvesting systems,eef7d32eca9a363c31151d2ac4873f98a93f02d2,0.0,0.0,0.0,36.764
+3be10c45163c61dfb9f250412699b3f8cb0ada1d,Churn prediction in telecom using Random Forest and PSO based data balancing in ,7113af6cefeece031e00aac386c35fa17a87ca01,0.0,0.0,0.0,86.954
+566c89a1ace18f57ac3212e6d62634b501990b31,Discovering social circles in ego networks,e3bb879045c5807a950047d91e65c15e7f087313,0.0,0.0,0.0,41.92
+370fda29c5aaff285311a87824c5f28db33da021,Permutation invariant training of deep models for speaker-independent multi-talk,c1cd441dad61b9d9d294a19a7043adb1582f786b,1.0,0.3391602052736161,1.0,38.862
+6c89453c09abde95d998f5acd244f00519472ee0,SemEval-2014 Task 3: Cross-Level Semantic Similarity,528fa9bb03644ba752fb9491be49b9dd1bce1d52,1.0,0.3391602052736161,1.0,31.49
+74d4bf32242a3d22df63e0cd3c7b5a0038220cd2,Design Approach to a Novel Dual-Mode Wideband Circular Sector Patch Antenna,3c64af0a3046ea3607d284e164cb162e9cd52441,0.0,0.0,0.0,27.994
+714c194a2fc326151b905270558aa137f9f22730,Two privacy-preserving approaches for data publishing with identity reservation,d30bf3722157c71938dc94419802239ef4e4e0db,0.0,0.0,0.0,26.399
+c79b88a8d8ba491cead38b431703d84015153a8f,An integrated framework on mining logs files for computing system management,0c5f142ff723d9a1f8e3b7ad840e2aaee5213605,0.0,0.0,0.0,25.904
+b2a20116c0609e23d3adfeaa604500fddca66178,DeltaCFS: Boosting Delta Sync for Cloud Storage Services by Learning from NFS,418e5e5e58cd9cafe802d8b679651f66160d3728,0.0,0.0,0.0,53.996
+8a93cd1b6fbf7c8c86637bae18d979dafeb9a7c1,Factor-based Compositional Embedding Models,0f9065db0193be42173be5546a3dfb839f694521,0.0,0.0,0.0,46.606
+281b6888d5df1dddb350fac4e9be5c8272519109,A Dual Attentive Neural Network Framework with Community Metadata for Answer Sel,8ff54aa8045b1e30c348cf2ca42259c946cd7a9e,0.0,0.0,0.0,36.37
+0a40663fdcf7c5fb7cfc459693116c41309e7eca,Algorithmic Nuggets in Content Delivery,9da9786e6aba77c72516abb5cfa124402cfdb9f1,0.0,0.0,0.0,23.852
+8501e330d78391f4e690886a8eb8fac867704ea6,"Train longer, generalize better: closing the generalization gap in large batch t",27da8d31b23f15a8d4feefe0f309dfaad745f8b0,1.0,0.3391602052736161,1.0,35.057
+beac53e8074b4822943a3374ff5e9fed98a891b8,Generate to Adapt: Aligning Domains Using Generative Adversarial Networks,1450296fb936d666f2f11454cc8f0108e2306741,0.0,0.0,0.0,46.474
+6ae4d0b388aa9262e80c3eedc1cb3e5f06842368,Visualization of complex attacks and state of attacked network,9fe265de1cfab7a97b5efd81d7d42b386b15f2b9,1.0,0.3391602052736161,1.0,39.317
+7db20fcc1d71edc32c365f145148d24b9f1427a5,A proposal of LDMOS using Deep Trench poly field plate,54ee63cdeca5b7673beea700e2e46e1c95a504e9,0.0,0.0,0.0,26.928
+335ad0ff82c728aca99fb0059c607cb18129526f,Bring you to the past: Automatic Generation of Topically Relevant Event Chronicl,39c230241d51b1435472115aaa8c62b94ab9927d,1.0,0.3391602052736161,1.0,31.703
+04e4034344bda5c97015ea634e6eb1b65ef3a898,Agile Team Perceptions of Productivity Factors,b58b3a1dd84fe44f91510df00905a1ed33c1525c,1.0,0.3391602052736161,1.0,25.124
+271a4077c037b86fb7daf6bff3e66682322ff7d7,Movement segmentation using a primitive library,23947c3cb843274423a8132f30dc30034006ca66,0.0,0.0,0.0,19.949
+3d23666c6d97d6ba3c86044d83c697821084bed6,Variational Sequential Labelers for Semi-Supervised Learning,8d6ca2dae1a6d1e71626be6167b9f25d2ce6dbcc,0.0,0.0,0.0,19.883
+fd4537b92ab9fa7c653e9e5b9c4f815914a498c0,One-Sided Unsupervised Domain Mapping,1e21b925b65303ef0299af65e018ec1e1b9b8d60,0.0,0.0,0.0,21.29
+191ea925c2115755b44380c99d84f4a1099b4dcd,Aggregating Content and Network Information to Curate Twitter User Lists,ca20f466791f4b051ef3b8d2bf63789d33c562c9,0.0,0.0,0.0,42.341
+458f1428273254fc5dd399f3c104f507680ddd54,Measuring discrimination in algorithmic decision making,bb192e0208548831de1475b11859f2114121c662,0.0,0.0,0.0,48.23
+19115f66f6ac1c02568bbb38eceedfa3521a8cc2,Deep and Shallow Architecture of Multilayer Neural Networks,6831bb247c853b433d7b2b9d47780dc8d84e4762,0.0,0.0,0.0,47.048
+84424eee012089dac9414979f0cb1465c97c4408,An inverse Yarbus process: Predicting observers’ task from eye movement patterns,342f0a9db326eb32df8edb8268e573ea6c7d3999,0.0,0.0,0.0,41.669
+5bb6b779de7929c573f39cd84169cafbd72e5bae,Could We Issue Driving Licenses to Autonomous Vehicles?,6ac15e819701cd0d077d8157711c4c402106722c,0.0,0.0,0.0,30.178
+7b6652910c5cc0df9ff6bc91912a02e58a742d26,Evolutionary mining of relaxed dependencies from big data collections,846b945e8af5340a803708a2971268216decaddf,0.0,0.0,0.0,29.764
+df0ef17f63582603dafb1ac5c489dec1416ecbf4,Real World BCI: Cross-Domain Learning and Practical Applications,17facd6efab9d3be8b1681bb2c1c677b2cb02628,0.0,0.0,0.0,22.099
+f2d5039b55d626ef5466a80e950bddd5cc1819d4,Inverse Reinforcement Learning,6f20506ce955b7f82f587a14301213c08e79463b,1.0,0.3391602052736161,1.0,28.396
+7492683af60d02dbd658acdc61249571f8c20fc8,J-Sim: a simulation and emulation environment for wireless sensor networks,f5dbb5a0aeb5823d704077b372d0dd989d4ebe1c,0.0,0.0,0.0,48.004
+f7f32e86c23a902ac55fba8b8191026f563bec5b,Subjectivity and Sentiment Analysis of Modern Standard Arabic,c2ac213982e189e4ad4c7f60608914a489ec9051,1.0,0.3391602052736161,1.0,28.488
+a22e737d38a1bc671893a7ed341aba436571097a,Developmental Changes in the Relationship Between Grammar and the Lexicon,a8da9412b4a2a15a3124be06c4c37ad98f8f02d2,0.0,0.0,0.0,37.967
+4b80771429b786ea87740738378ba1eb1504a57f,Literature Fingerprinting: A New Method for Visual Literary Analysis,076077a5771747ad7355120f1ba64cfd603141c6,0.0,0.0,0.0,24.167
+9003fb79e7848ced3be975c3d87a9348a4b8d377,"Moral development, executive functioning, peak experiences and brain patterns in",8ed0ee88e811aaaad56d1a42e2cfce02edcc90ff,1.0,0.3903800499921017,1.0,52.565
+ac58b487e864afafe71c6158553eed10fbc8eef5,A NEW PERSPECTIVE ON PORT SUPPLY CHAIN MANAGEMENT ACCORDING TO THE SERVICE DOMIN,678680169e8b75430c1239e7e5289f656e009809,1.0,0.3391602052736161,1.0,47.305
+30c9a7660281ad8e4538ff9beb20282c74fac810,Online Social Networks anatomy: On the analysis of Facebook and WhatsApp in cell,c5fa3cf216af23b8e88803750ff8e040bb8a2d1f,0.0,0.0,0.0,41.37
+129397ed6557da93db5ba18cf112ee7b0a7927d8,Stochastic Variational Deep Kernel Learning,2e4e83ec31b43595ee7160a7bdb5c3a7dc4a1db2,0.0,0.0,0.0,29.526
+1a66df57f88e689438d505474eff73e3a9180c5b,Survey on modeling and indexing events in multimedia,51c88134a668cdfaccda2fe5f88919ac122bceda,0.0,0.0,0.0,28.958
+e00ab75a8aa637d9c4c5c020e9f2c54b31528031,3D ActionSLAM: wearable person tracking in multi-floor environments,e182225eb0c1e90f09cc3a0f69abb7ac0e9b3dba,0.0,0.0,0.0,33.749
+7707c7aac35a4d206eb061305256452051ae4dcf,Data Warehouse Life-Cycle and Design,83834cd33996ed0b00e3e0fca3cda413d7ed79ff,0.0,0.0,0.0,26.257
+23386571ed332e4a465c0a6fa899f310caa217c8,Topic-Relevance Map: Visualization for Improving Search Result Comprehension,1e978d2b07a1e9866ea079c06e27c9565e9051b8,0.0,0.0,0.0,43.367
+e7ec9e900556d9d9e47b274911ad304bcf198256,Common Mode EMI Noise Suppression for Bridgeless PFC Converters,60ba158cb1a619726db31b684a7bf818e2f8256b,1.0,0.3391602052736161,1.0,33.343
+ca464085b3da330f2ea895543a78c446a3af1bb6,Calcium hydroxylapatite for jawline rejuvenation: consensus recommendations.,a55d01c2a6d33e8dff01d4eab89b941465d288ba,0.0,0.0,0.0,37.341
+f09db8a42d713774483f023b31e0ee96361823f4,Adversarial Texts with Gradient Methods,600a5d60cb96eda2a9849413e747547d70dfb00a,0.0,0.0,0.0,26.404
+958ebc7e24012b419316489515f2c2f908773bd5,Pose tracking from natural features on mobile phones,779f05bf98049762df4298043ac6f38c82a07607,1.0,0.3391602052736161,1.0,24.375
+73d54af530d22599cc76b9785ae0a663cc694df2,Neural Variational Inference For Embedding Knowledge Graphs,018300f5f0e679cee5241d9c69c8d88e00e8bf31,0.0,0.0,0.0,24.644
+de77514c78432a0b17cf30baa024434173908f89,Autonomous underwater grasping using multi-view laser reconstruction,aae4665c2bd9f04e0c7f993123b30d87486b79f7,1.0,0.3391602052736161,1.0,22.858
+7c88a0f765ce3c9025345cf133251cb947fe6ee5,Hierarchical multi-label classification over ticket data using contextual loss,32093be6d9bf5038adb5b5b8b8e8a9b62001643c,0.0,0.0,0.0,35.292
+a9d7e7e918a68d1b95c6c6b29f7fabbbe01010f7,Iterative Hough Forest with Histogram of Control Points for 6 DoF object registr,dba7d665367dacedc1915787f3aa158fe24aa4f7,0.0,0.0,0.0,42.317
+0bfa2ab02f3c9a9fe06fcebf34bd8f371e206512,Let's go public! taking a spoken dialog system to the real world,387ef15ce6de4a74b1a51f3694419b90d3d81fba,1.0,0.3903800499921017,1.0,30.155
+5e1b80b4774582b948c6dcd656daaba6724ffc2d,Evaluation of a Brute Forcing Tool that Extracts the RAT from a Malicious Docume,b90dd2f366988d9bb76399d4137c1768fe460c8f,1.0,0.3391602052736161,1.0,43.933
+382bbb79d7ffda63395db3d9b4ebce55d0b2f038,Individuality and Alignment in Generated Dialogues,c3a2c1eedee7cd170606c5bda4afd05289af8562,0.0,0.0,0.0,32.67
+f7bdc97a6b4c5d65c145479ae74b3a244121ae89,Digital Image Authentication Model Based on Edge Adaptive Steganography,5882b1409dc3d6d9beebb0fd3ab149f864e8c8d3,0.0,0.0,0.0,29.338
+e659e72b7962c9ad586a2d35a7099550102fb054,Brain-computer interface systems: progress and prospects.,16b187a157ad1599bf785912ac7974e38198be7a,0.0,0.0,0.0,22.071
+3136f52540fb7925998eff94e9c016d2e1a6fe12,Tablets and humanoid robots as engaging platforms for teaching languages,2093bb20cbaf684d5fde5ec46ebf5a9423393581,0.0,0.0,0.0,40.079
+0bf046038a555bc848030a28530f9836e5611b96,ModDrop: Adaptive Multi-Modal Gesture Recognition,84f7b7be76bc9f34e6ed9ee15defafaeb85ec419,0.0,0.0,0.0,25.436
+5a4b46ef8898610ab16a1ced6f4a976db0f1962c,Jack the Reader - A Machine Reading Framework,2f585530aea2968d799a9109aeb202b03ba977f4,0.0,0.0,0.0,33.547
+232427099d4a8acf1dc29efc852f09c5964e6165,A New View of Predictive State Methods for Dynamical System Learning,27229aff757b797d0cae7bead5a236431b253b91,0.0,0.0,0.0,54.101
+100636ca50edf63d4336bb071f3e172cb0ebccaa,Deep Reinforcement Learning for Conversational AI,66c54b8ba52a6eae6727354dedaacbab1dd5a8ea,0.0,0.0,0.0,33.011
+7a373793804ea9813d64641919e14841f927c38f,GeoNet: Geometric Neural Network for Joint Depth and Surface Normal Estimation,e3412b045525ed4a6c0142bba69522beb2f82a25,0.0,0.0,0.0,50.871
+e788f08148b4b06f4e537b27b51338f1c88ccea8,FaCT++ Description Logic Reasoner: System Description,36ada37bede2f0fd3dbab2f8d4d33df8670ff00b,1.0,0.3391602052736161,1.0,42.419
+8fad88b5678bfecab78d0d6389f649ccfb310d22,EvoNN: a customizable evolutionary neural network with heterogenous activation f,45b7d3881dd92c8c73b99fa3497e5d28a2106c24,1.0,0.3391602052736161,1.0,49.019
+e48e9cf407af2694ecfefd441c2c28faffdf0835,Antipodal Vivaldi antenna for phased array antenna applications,843018e9d8ebda9a4ec54256a9f70835e0edff7e,1.0,0.3391602052736161,1.0,64.607
+065985d4d0854c51f52ad7a7507b267d9b88ab1c,Multi-class active learning for image classification,6ec02fb5bfc307911c26741fb3804f16d8ad299c,0.0,0.0,0.0,48.529
+44a56dc083e3e2b07f11aae29c1ee560f46efa4a,A Novel Fast Framework for Topic Labeling Based on Similarity-preserved Hashing,682988d3cc614c122745d0e87ad9df0f44c3e432,1.0,0.3391602052736161,1.0,53.099
+3b198869df03d98b81c0c882753845a3bca36c63,"Flexible Radio Access Beyond 5G: A Future Projection on Waveform, Numerology, an",4d1efe967fde304dc31e19665b9c328969a79128,1.0,0.3391602052736161,1.0,68.888
+9a7e12ef462e779263ee3f2dd415d2d21233f15d,"Unraveling the Anxious Mind: Anxiety, Worry, and Frontal Engagement in Sustained",2ce0d2f6efe74b9df4c0eccb434322d931c5dd47,1.0,0.3391602052736161,1.0,49.483
+76dac031066a95715a3b116eb2094ec9bdd15171,Reinforcement Learning for Coreference Resolution,3ea09660687628d3afb503bccc62126bb6304d18,0.0,0.0,0.0,29.202
+26ebc1b9e21db68d5abf01acd2a0c38d260c65a1,Deep Residual Bidir-LSTM for Human Activity Recognition Using Wearable Sensors,98cef5c176f714a51ddfc8585b8985e968ea9d25,0.0,0.0,0.0,43.131
+a1be02429ab4ec852656f8833c3160f4592cc547,Reward-estimation variance elimination in sequential decision processes,146b84bdd9b9078f40a2df9b7ded26416771f740,0.0,0.0,0.0,30.379
+a1f5c39aece58f6504e0334d96eaede32c7329cf,Emotion recognition using Speech Processing Using k-nearest neighbor algorithm,48d0fdea25539712d98f5408465affcaa23dc917,0.0,0.0,0.0,39.418
+8ff6581f94c366e34c6f2d55806f7781194c33c8,On visual gaze tracking based on a single low cost camera,9b8fcb9464ff6cc7bd8311b52e5fb62394fb43f4,0.0,0.0,0.0,69.61
+fd65ca4e3ae95302f74bf863988cdb95d6a12824,Speech Emotion Recognition with Emotion-Pair Based Framework Considering Emotion,286f0650438d0cc5123057909662d242d7bbce07,0.0,0.0,0.0,83.853
+3565d884735ead613a5aa0903f06a2cc86d05b6b,Analysis and Experimental Kinematics of a Skid-Steering Wheeled Robot Based on a,760c81c0a19f8358dde38691b81fe2f20c829b44,1.0,0.3391602052736161,1.0,65.758
+c2e57b2871fdfd06566820c5329815ac06f66197,DeepMem: Learning Graph Neural Network Models for Fast and Robust Memory Forensi,0214778162cb1bb1fb15b6b8e5c5d669a3985fb5,0.0,0.0,0.0,53.871
+59e2037f5079794cb9128c7f0900a568ced14c2a,Clothing and People - A Social Signal Processing Perspective,03684e4a57d2c33e0ed219cad9e3b180175f2464,1.0,0.3391602052736161,1.0,45.115
+3f95e155b1c40911149fe994197a502ef44ebbbe,Music emotion recognition: the role of individuality,12f8ae73af6280171a1c5fb8818320427c4f255f,1.0,0.3391602052736161,1.0,23.972
+0674058618d04def58c79a0b28174301ef591433,RainForest—A Framework for Fast Decision Tree Construction of Large Datasets,39b58ef6487c893219c77c61c762eee5694d0e36,1.0,0.3391602052736161,1.0,37.2
+23a7c8d9f142184d28e56b0751e172fef6539275,OCA: Opinion corpus for Arabic,c2ac213982e189e4ad4c7f60608914a489ec9051,0.0,0.0,0.0,23.642
+ee6b940d3ae36f9b124586b15a49cec45f24b90a,Cross-Coupled Substrate Integrated Waveguide Filters With Improved Stopband Perf,54797270f673a2efc9c4b86b5de3befa59b13bd2,1.0,0.3391602052736161,1.0,37.738
+2bd338ef8751b62d23e53fbb44d67042d634da2f,FastFlow: High-level and Efficient Streaming on Multi-core,3e89403dcd478c849732f872001064f21ff073f9,0.0,0.0,0.0,32.873
+ddbb6e0913ac127004be73e2d4097513a8f02d37,Face Detection Using Quantized Skin Color Regions Merging and Wavelet Packet Ana,8776e7260399e838da02f092d0f550ae1e59f7b5,0.0,0.0,0.0,35.752
+d6b56cc6e05300426b6194dd3f6a38720678827e,Redirected Walking in Virtual Reality,bd75508d29a69fbf3bf1454c06554e6850d76bd5,1.0,0.3391602052736161,1.0,22.741
+df39e24c3cc21dc4c79995ec2b424a37dac999c7,Defensive Distillation is Not Robust to Adversarial Examples,38418928d6d842fe6edadc809f384278d793d610,1.0,0.3391602052736161,1.0,45.699
+74bd4761b373447079c6e5cd31832c00fab2fa77,Ten Simple Rules for Developing Usable Software in Computational Biology,6fcccd6def46a4dd50f85df4d4c011bd9f1855af,0.0,0.0,0.0,48.29
+ddbf21ca1de9617894b15d45787a27557f02a494,Two-level Message Clustering for Topic Detection in Twitter,7da851a9d67b6c8ee7e985928f91ee577c529f2e,0.0,0.0,0.0,43.274
+f754cab548f2c209ea7d932084ef768b92b27614,An Agent-based Indoor Wayfinding Based on Digital Sign System,20862a3a216ecc99519fa24fb0826317a3e54302,0.0,0.0,0.0,34.799
+373f76633cc1f6c7a421e31c989842021a52fca4,A Fast Learning Algorithm for Deep Belief Nets,192687300b76bca25d06744b6586f2826c722645,0.0,0.0,0.0,39.673
+01d208b33561362f7714f714d3bc4a1f7aa1637c,Bank distress in the news: Describing events through deep learning,b0bd79de12dcc892c7ed3750fa278d14158cab26,0.0,0.0,0.0,45.86
+f365ce3e68cb3795887e93baf5fed5d783b3904e,Web-STAR: A Visual Web-based IDE for a Story Comprehension System,501363eb1c55d30e6151d99269afc5aa31f8a0c8,0.0,0.0,0.0,46.846
+28e0707528f78fecb26fe7f003d94f6a5de32b98,Power to the People: The Role of Humans in Interactive Machine Learning,29108331ab9bfc1b490e90309014cff218db25cf,1.0,0.3391602052736161,1.0,51.174
+fa8042d025895e22af2d9df3ffb9f67438610fcc,Two-Phase Malicious Web Page Detection Scheme Using Misuse and Anomaly Detection,9cbe8c8ba680a4e55517a8cf322603334ac68be1,1.0,0.3391602052736161,1.0,44.347
+ae2b67d03512dd0f13a68636d1d7f83cc889318a,IoT-Based Health Monitoring System for Active and Assisted Living,1bf9a76c9d9838afc51983894b58790b14c2e3d3,0.0,0.0,0.0,41.207
+b8397b4418bb1d576210d9a39d44725d6ffb2a44,Chinese/English mixed Character Segmentation as Semantic Segmentation,efaf2ddf50575ae79c458b7c4974620d2a740ac7,0.0,0.0,0.0,32.478
+ebf4ef0701e6f6c2050e5bed0be54fd4d8a1d991,"Wireless Networks Design in the Era of Deep Learning: Model-Based, AI-Based, or ",76365e761078ce82463988df59a8a0bce0d8d4d3,0.0,0.0,0.0,40.876
+af441a4f1b754ad9b3a4401e8361ad9b66786778,Examination of the Correlation Between Internet Addiction and Social Phobia in A,5829ac859bd2b301cfd53a44194aecb884e99355,1.0,0.3391602052736161,1.0,43.203
+8bb3a478db8951f42198a885d7245d58036ba55c,Applying Universal Schemas for Domain Specific Ontology Expansion,08394b082370493f381bab44158dc316fe6eef2a,0.0,0.0,0.0,35.183
+9e76a700f03ef476b964b27e23c071163e44c232,Reduction of THD in Diode Clamped Multilevel Inverter employing SPWM technique,d6b3be85cae20761285d347bafac7b2c2b3b176a,0.0,0.0,0.0,38.925
+43da9037d50745002195abb864243ecc75d4b040,Design Opportunities for Wearable Devices in Learning to Climb,26bea0df45f41161032f471c76c613a5ad623a7e,0.0,0.0,0.0,28.002
+b21951a276dd940e052676b06e193f65fdc297f9,Volume of signaling traffic reaching cellular networks from mobile phones,df8902f8acb0b30a230dfaa1ead91e27f123472c,0.0,0.0,0.0,31.893
+b9d502d98e3bb19f8179a4363e3f28c6b6def7a8,An online PPGI approach for camera based heart rate monitoring using beat-to-bea,508d8c1dbc250732bd2067689565a8225013292f,0.0,0.0,0.0,35.758
+399acab2bee6eccbfffe4a2ce688b6b1075e9c5e,Eyeriss: a spatial architecture for energy-efficient dataflow for convolutional ,402f850dff86fb601d34b2841e6083ac0f928edd,0.0,0.0,0.0,37.809
+4649e3279edf653135f1f31da3e242ba451a93de,3D Texture Recognition Using Bidirectional Feature Histograms,f43c1aee5382bb6fe9c92c54767218d954016e0c,0.0,0.0,0.0,25.809
+4ab6e67519411dbdb69c6111a3b8d5f334ebb579,Popularity-driven Caching Strategy for Dynamic Adaptive Streaming over Informati,b356bd9e1df74a8fc7a144001a88c0e1f89e616d,0.0,0.0,0.0,40.227
+924544f503070bb390cc51e4bac9cbb3171aa03f,Computation offloading for mobile edge computing: A deep learning approach,ec1df457a2be681227f79de3ce932fccb65ee2bb,0.0,0.0,0.0,36.536
+d2e6250e95af09fefbe638f1580420476a2ecaee,EmoBGM: Estimating sound's emotion for creating slideshows with suitable BGM,6e7302a08e04e2120c50440f280fb77dcd5aeb35,0.0,0.0,0.0,30.343
+79e13ff4a21f13d3839422568274ea84a9fe42b5,A probabilistic framework for object search with 6-DOF pose estimation,498e08e8e2f4e44a115fdf541583dbb3fa80d284,0.0,0.0,0.0,43.942
+17507ae3ed6c96320a448d8c55aced80d4800b73,Combining concept hierarchies and statistical topic models,99f231f29d8bbd410bb3edc096a502b1ebda8526,0.0,0.0,0.0,26.837
+9c7bdd21ccc7a0e395af63cc584dfd780d43e51b,An Intelligent Anti-phishing Strategy Model for Phishing Website Detection,d9d8aafe6856025f2c2b7c70f5e640e03b6bcd46,0.0,0.0,0.0,53.409
+68cc5038a4937b96f1bf127dd574ac7b713bfa72,Online Learning for Adversaries with Memory: Price of Past Mistakes,591b52d24eb95f5ec3622b814bc91ac872acda9e,0.0,0.0,0.0,32.238
+6fa640758b38cb8214be003bebaf472438428a9a,BM3D-PRGAMP: Compressive phase retrieval based on BM3D denoising,4fd69173cabb3d4377432d70488938ac533a5ac3,0.0,0.0,0.0,24.459
+8aba3628ad8c9cec11b2b518a96b883bda8b3cbb,Broadband millimetre-wave passive spatial combiner based on coaxial waveguide,5f4847990b6e68368cd2cac809748298ab241099,0.0,0.0,0.0,31.0
+12219a387158e41e212af4ae1c57a29934627128,Immune System Based Intrusion Detection System,b56d1c7cef034003e469701d215394db3d8cc675,0.0,0.0,0.0,30.275
+a704f6eca77b9bcf63e2d533ae6d6180785decf7,Speed control of buck converter fed DC motor drives,2d78fbe680b4501b0c21fbd49eb7652592cf077d,1.0,0.3391602052736161,1.0,35.018
+67f9f2cf408b2cc593a9ddb17d74d2b3f72ee225,Modeling Compositionality with Multiplicative Recurrent Neural Networks,30b32f4a6341b5809428df1271bdb707f2418362,0.0,0.0,0.0,38.983
+60184fecc57b51fd4f312b77e3817af18643ef8e,Power Optimized Voltage Level Shifter Design for High Speed Dual Supply,e74923f05c05a603356c4e88a5bcc1d743aedeb5,1.0,0.3391602052736161,1.0,35.578
+2d52f69dd4686a3e66f5a8a1650a24bcea43530e,Provable data possession at untrusted stores,ae80f715274308a7564b400081efb74e21e3c1ea,0.0,0.0,0.0,29.358
+64ddfb947878347a30610b6ca2314fe2bac96a4a,Cyber–Physical Device Authentication for the Smart Grid Electric Vehicle Ecosyst,205917e8e885b3c2c6c31c90f9de7f411a24ec22,0.0,0.0,0.0,41.123
+f14069aaa8b234dfafd3292863c0e610288fbc80,Multi-Scale multi-band densenets for audio source separation,37fdf57456a1b1bd5e7f0c88c0ad79f29c962a8d,0.0,0.0,0.0,37.418
+72cf3347ff06226e57214b49801de9fc02df8d52,Personalized Recommendation for Online Social Networks Information: Personal Pre,1d06bfa37282bda43a396dc99927b298d0288bfa,0.0,0.0,0.0,45.355
+f824f0f5e28e434e1b5897153697816dd906ca8e,Path Planning through PSO Algorithm in Complex Environments,2ca1fed0a117e9cccaad3f6bab5f4bed7b79a82c,1.0,0.3391602052736161,1.0,27.232
+39dba6f22d72853561a4ed684be265e179a39e4f,Sequence to Sequence Learning with Neural Networks,7703a2c5468ecbee5b62c048339a03358ed5fe19,0.0,0.0,0.0,25.525
+b42003018aef3d104271710690c4d662ab01571a,Cartesian Cubical Computational Type Theory: Constructive Reasoning with Paths a,8f3eb3fea1f7b5a609730592c035f672e47a170c,1.0,0.3903800499921017,1.0,25.434
+fd4677e1b2cd0cba66ab4a64cbd1fe015d3a742b,The Rise of Emotion-aware Conversational Agents: Threats in Digital Emotions,0fb54f54cd7427582fdb2a8da46d42884c7f417a,0.0,0.0,0.0,26.255
+387dd9f50cf0af914cf39ecef3b72aca2c3476c1,Using contours to detect and localize junctions in natural images,dffaa9e4bfd2bca125883372820c1dcfd87bc081,0.0,0.0,0.0,28.714
+789bd068751c17373ca1f812e711af344b485d2e,Hierarchical Character-Word Models for Language Identification,1005645c05585c2042e3410daeed638b55e2474d,0.0,0.0,0.0,26.193
+aa447f6462c7efe7f3cd9ded120637ceefcdc0ce,Serving Deep Learning Models in a Serverless Platform,2b1759673f0f8da5e9477b127bab976f8d4d50fe,1.0,0.3391602052736161,1.0,23.388
+636e8a004983a26647e11be23165bdae83a68a5a,A statistical approach for real time robust background subtraction,e88eec15946dd19bdcf69db882f204386e05ff48,0.0,0.0,0.0,30.305
+b3c8eeed23cc8b472ceefe64888a2036dd7df4d2,Paying Attention to Descriptions Generated by Image Captioning Models,a0e03c5b647438299c79c71458e6b1776082a37b,1.0,0.3391602052736161,1.0,33.813
+3cfa669b42a1e0e87bf3aca4d491039495ef87f8,Enabling Technologies for the Internet of Health Things,2b00e526490d65f2ec00107fb7bcce0ace5960c7,1.0,0.3391602052736161,1.0,30.296
+0ce72c74fed3bd81c9ceffa0f0c1954b88328e32,"Motion, emotion and empathy in esthetic experience",a48ba720733efa324ed247e3fea1d9d2cb08336e,0.0,0.0,0.0,40.175
+1e12fb38bfc2c7aa86806f87df4cdaf035f92fb7,An implicit segmentation-based method for recognition of handwritten strings of ,f39e21382458bf723e207d0ac649680f9b4dde4a,0.0,0.0,0.0,29.544
+4e546c43e5642ecdffd000406f0b35c1e3430a2c,Algorithms for RealTime Object Detection in Images,d6002a6cc8b5fc2218754aed970aac91c8d8e7e9,0.0,0.0,0.0,25.473
+522ef548c054fd03109ff1886d243a11ce6d1e2a,MapReduce-based deep learning with handwritten digit recognition case study,f09a1acd38a781a3ab6cb31c8e4f9f29be5f58cb,1.0,0.3391602052736161,1.0,24.416
+a39a3d23826455285039041f8a9a393b09119b86,The Neural Career of Sensory-motor Metaphors,abbb1ed6bd09bbeae2b7f5d438950d774dbfdb42,0.0,0.0,0.0,39.684
+0c1c94f582cfaa727a03a452ea71cab809d8f7ce,Implementation of flash flood monitoring system based on wireless sensor network,4a9c1b4569289623bf9812ffe2225e4b3d7acb22,1.0,0.3903800499921017,1.0,40.872
+a98d48b6c4188143dbb2474a1cb27c2f9e3b5c0a,GeoDa web: enhancing web-based mapping with spatial analytics,270d8ac5350039c06f48e13d88da631634afaadb,1.0,0.3391602052736161,1.0,26.112

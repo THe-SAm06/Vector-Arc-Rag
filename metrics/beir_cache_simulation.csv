@@ -1,0 +1,7 @@
+dataset,total_queries,cache_hits,cache_misses,hit_rate,llm_calls_saved,p50_hit_ms,p95_hit_ms,p50_miss_ms,p95_miss_ms,cache_capacity,threshold
+scifact,150,12,138,0.08,12,15.23,24.31,34.5,58.44,50,0.9
+nfcorpus,150,0,150,0.0,0,0.0,0.0,16.18,33.66,50,0.9
+arguana,150,0,150,0.0,0,0.0,0.0,210.89,471.93,50,0.9
+scidocs,150,0,150,0.0,0,0.0,0.0,35.03,91.95,50,0.9
+fiqa,135,0,135,0.0,0,0.0,0.0,50.99,97.0,50,0.9
+quora,150,0,150,0.0,0,0.0,0.0,26.32,41.77,50,0.9

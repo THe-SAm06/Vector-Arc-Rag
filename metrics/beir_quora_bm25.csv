@@ -1,0 +1,151 @@
+qid,query,retrieved,hit@1,ndcg@10,mrr@10,latency_ms
+187,What causes a nightmare?,4454,0.0,0.0,0.0,3.251
+273,Does it matter whether humans are selfish or evil?,274,1.0,1.0,1.0,5.248
+313,"If I do not monetize YouTube videos & upload copyright content, then are there c",314,1.0,1.0,1.0,13.988
+359,Do animals kiss?,360,1.0,1.0,1.0,2.689
+493,Who is disrupting Bloomberg?,494,1.0,1.0,1.0,2.46
+615,What jobs are available with a bachelor’s degree in Homeland Security?,614,1.0,1.0,1.0,7.204
+616,Which are the best books to understand calculus?,617,1.0,1.0,1.0,5.837
+682,How do earthquake resistant buildings work?,681,1.0,1.0,1.0,4.299
+727,What should I do to be a good Speaker?,726,1.0,1.0,1.0,6.345
+753,How can I maintain my peace of mind?,752,1.0,1.0,1.0,5.486
+823,Are there any strong indications that Donald Trump does cocaine?,822,1.0,1.0,1.0,6.959
+840,What's your bucket list?,841,1.0,1.0,1.0,3.028
+885,How can I join MIT?,804,1.0,0.46927872602275644,1.0,3.156
+965,Why are police lights red and/or blue?,964,1.0,1.0,1.0,4.795
+1093,How can I hack another WhatsApp account?,1092,1.0,0.6131471927654584,1.0,4.958
+1145,What is the difference between sex and masturbation when it comes to pleasure?,1144,1.0,1.0,1.0,7.894
+1234,What is the reason Pakistan supports terrorism?,1235,1.0,1.0,1.0,4.695
+1238,"In your opinion, what is the best classical song of all time?",1239,1.0,1.0,1.0,7.576
+1251,How are the conditions inside European Refugee Camps?,1250,1.0,1.0,1.0,5.07
+1305,Where can I get super high quality photos for any photo booth services in Sydney,1306,1.0,1.0,1.0,9.774
+1464,Who is best Indian hacker?,4137,0.0,0.0,0.0,3.246
+1566,Is there a big chance that Trump will win the election?,1863,0.0,0.0,0.0,6.956
+1569,How can I meet Suresh Raina?,1570,1.0,1.0,1.0,3.815
+1608,How do I know if my online girlfriend truly loves me?,2962,0.0,0.0,0.0,6.488
+1630,Why is the soul immortal?,1629,1.0,1.0,1.0,3.839
+1665,Which is the best PMP Certification course provider in Bangalore?,1666,1.0,1.0,1.0,5.921
+1712,How is the job situation in New Zealand for computer science graduates diploma?,1711,1.0,1.0,1.0,9.384
+1744,What do we need to have the best Halloween?,1743,1.0,1.0,1.0,6.489
+1826,What is the very first thing you remember in your life?,1825,1.0,1.0,1.0,7.413
+1888,What is the reason behind the reactance of a capacitor?,1887,1.0,1.0,1.0,6.886
+1930,How should I be a people person?,1929,1.0,1.0,1.0,4.576
+2021,Do you think of mathematics as art or science?,2022,1.0,1.0,1.0,6.271
+2096,What are the best things to learn in life?,1743,0.0,0.0,0.0,6.869
+2101,Can you be a sociopath with more psychopathic traits?,2100,1.0,1.0,1.0,5.164
+2267,How can I meet Modi?,2266,1.0,1.0,1.0,3.492
+2276,Why do people belive in god?,4899,0.0,0.0,0.0,3.621
+2309,What is your favourite story by Isaac Asimov?,2308,1.0,1.0,1.0,4.896
+2410,What are the minimum GPA and GRE requirements of Florida State University?,2411,1.0,1.0,1.0,7.482
+2563,What are the differences between Chinese and western etiquette?,2562,1.0,1.0,1.0,6.174
+2644,Why does the Indian education system suck?,1465,0.0,0.0,0.0,4.399
+2777,Who invented the middle finger bad gesture?,2776,1.0,1.0,1.0,6.645
+2789,How can you register a Maltipoo at the AKC?,2788,1.0,1.0,1.0,6.351
+3070,How do you treat gunshot wounds?,3069,1.0,1.0,1.0,3.789
+3085,What's the first thing you do after you wake up?,3086,1.0,1.0,1.0,6.558
+3234,How do I start a plant nursery?,3235,1.0,1.0,1.0,4.353
+3363,"How much money per month is enough to live as a graduate student in Birmingham, ",3364,1.0,1.0,1.0,11.041
+3390,Why are there so many Muslims in Hindi film industry?,3389,1.0,1.0,1.0,7.324
+3474,What would happen if one of the two candidates of the presidential election died,2491,1.0,0.6131471927654584,1.0,12.574
+3540,What can I do right now to help the people of Aleppo?,3541,1.0,1.0,1.0,7.877
+3565,How do I stop feeling insecure?,3566,1.0,1.0,1.0,3.85
+3573,How often do you drink coffee (-based) drinks?,3574,1.0,1.0,1.0,4.741
+3654,"How is EEE in VSSUT, Burla?",3653,1.0,1.0,1.0,4.63
+3764,What is the Syria civil war?,3763,1.0,1.0,1.0,3.978
+3766,What is psychology?,3765,1.0,1.0,1.0,2.196
+3770,How are the 6 mother sauces used in cooking?,3769,1.0,1.0,1.0,5.309
+3803,Is creating satellite blogs and posting SEO-friendly posts considered black-hat ,3802,1.0,1.0,1.0,7.715
+3818,How can I speed up my Internet connection?,3817,1.0,1.0,1.0,6.434
+3950,Have you ever had sex with a teacher?,3949,1.0,1.0,1.0,4.903
+3958,How much does Uber driver earn in India?,3957,1.0,1.0,1.0,4.963
+3989,Why do people go for mba after masters in engineering,3990,1.0,1.0,1.0,6.954
+4030,Is it necessary to take a coaching class to prepare for the JEE Advanced?,4029,1.0,1.0,1.0,8.723
+4034,How do I unpop a clogged ear?,4033,1.0,1.0,1.0,4.791
+4050,Would you rather know when you will die or how you will die?,4049,1.0,1.0,1.0,8.255
+4135,Why do some people sweat excessively in their armpits?,4136,1.0,1.0,1.0,5.481
+4172,How can I make money from my car?,4171,1.0,1.0,1.0,5.189
+4293,What are the best strengths of Indian Army?,4292,1.0,1.0,1.0,7.107
+4331,Why do some people still think Global warming a myth?,4332,1.0,1.0,1.0,6.141
+4414,What was it like to meet Richard Feynman?,4413,1.0,1.0,1.0,5.304
+4415,What should I do to make money online in India?,2560,0.0,0.0,0.0,6.317
+4433,How I can be good at handwriting?,3114,1.0,0.6131471927654584,1.0,4.357
+4443,What is the current political scenario in India?,4442,1.0,1.0,1.0,5.329
+4490,Why do people believe in God and how can they say he/she exists?,2277,0.0,0.0,0.0,7.586
+4519,What should I do after completing my bcom?,4518,1.0,1.0,1.0,5.119
+4530,Which is the best Teradata online training?,4531,1.0,1.0,1.0,4.663
+4641,What is normalized score in gate exam?,4642,1.0,1.0,1.0,4.299
+4650,What is the worst restaurant experience you ever had?,4649,1.0,1.0,1.0,5.33
+4689,What is the lie you tell most often?,4688,1.0,1.0,1.0,5.497
+4697,"Which is best 32 inch led tv to buy below 20,000 INR?",4696,1.0,1.0,1.0,6.62
+4755,How can medical doctors move into biotech or molecular biology?,4756,1.0,1.0,1.0,6.128
+4837,What is a weak entity in DBMS? Why is it called weak?,4838,1.0,1.0,1.0,7.799
+4870,How many times should one have sex a day?,4869,1.0,1.0,1.0,5.995
+4903,Why are so many good quality answers collapsed on Quora?,3433,0.0,0.0,0.0,7.3
+4925,Was the White House entirely built by slaves?,4924,1.0,1.0,1.0,4.701
+4929,"What is the definition of ""real programmer""?",4928,1.0,1.0,1.0,4.395
+5066,What are the benefits of a joint family?,5065,1.0,1.0,1.0,5.525
+5097,Where can I get best festival DJ services in Sydney?,5096,1.0,1.0,1.0,5.842
+5710,How can I improve my drawing skills?,1369,0.0,0.0,0.0,4.548
+6273,What will be the effect on share market after the banning of 500 and 1000 notes?,590,1.0,0.6131471927654584,1.0,10.816
+6580,How do GST bill will benefit local people?,499,1.0,0.6131471927654584,1.0,4.964
+7167,What is the best way to increase traffic for a new blog?,3261,1.0,0.3903800499921017,1.0,7.457
+7721,How may I contribute to the world of open source?,799,1.0,0.6131471927654584,1.0,6.405
+9622,What are the best hacks that we can use it in our daily life?,1104,1.0,0.6131471927654584,1.0,9.403
+11269,Where can I buy special flavor cupcake at Gold Coast?,571,1.0,0.3391602052736161,1.0,6.327
+16028,Which are best places to visit in GOA during vacations?,3480,1.0,0.6131471927654584,1.0,7.074
+17811,Why do so many people ask questions on Quora that can be easily answered by any ,4951,1.0,0.22009176629808017,1.0,24.096
+23014,What are the chances of war between India and Pakistan and its effects on India',201,1.0,0.3903800499921017,1.0,11.917
+24638,In what ways microorganisms are useful?,3914,0.0,0.0,0.0,3.941
+25772,What are the best pick-up lines?,2646,1.0,1.0,1.0,4.451
+26187,What are the safety precautions on handling shotguns proposed by the NRA in Wisc,1595,1.0,0.6131471927654584,1.0,9.124
+26197,How do I apply and receive pan card in 48 hours with new facilities?,2091,1.0,1.0,1.0,10.501
+30026,What would be the best programming language to DIY learn today?,3876,1.0,0.30260241349881345,1.0,7.771
+31215,What it is like working at goldman?,3600,1.0,1.0,1.0,4.827
+31494,How can I improve my presence of mind and concentration?,658,0.0,0.0,0.0,7.424
+33734,Can we stop global warming? Yeo/No? Why?,3156,1.0,0.6131471927654584,1.0,3.921
+37695,How do I start up a new cafe?,2766,1.0,0.6131471927654584,1.0,5.39
+41171,How do I plan a trip to Goa?,2400,1.0,0.6131471927654584,1.0,5.526
+42036,How do I avoid sleeping during the lectures?(a serious jee aspirant),4236,0.0,0.0,0.0,6.966
+44444,How can I increase my penis?,1259,0.0,0.0,0.0,4.706
+46520,Which earphones are better under 2000?,3466,1.0,0.6131471927654584,1.0,3.66
+46880,How do I send messeges on Quora?,1396,1.0,0.6131471927654584,1.0,4.239
+51686,What would happen if you hired two private detectives to spy on each other?,365,1.0,0.6131471927654584,1.0,9.528
+51796,Why do all of my questions get marked as needing improvement?,4475,0.0,0.0,0.0,6.365
+51805,Can men ejaculate during intercourse without having an orgasm?,4876,1.0,0.6131471927654584,1.0,6.251
+53730,What do developers think about the new MacBook Pro?,1028,1.0,0.3903800499921017,1.0,6.309
+56335,How do you commit suicide?,4728,1.0,0.6131471927654584,1.0,3.613
+57751,Will we get more and more dark energy and vacuum energy as universe expands? Wil,1842,1.0,0.3903800499921017,1.0,10.304
+59185,How can i stop thinking about something/someone ?,1526,1.0,1.0,1.0,5.338
+71569,How much does irregular periods affect pregnancy?,4848,1.0,0.6131471927654584,1.0,4.126
+71756,Will the ban on 500 & 1000 rupee notes really work against corruption?,877,0.0,0.0,0.0,7.306
+74164,What are the things that separate India from other countries making it unique in,2166,1.0,0.6131471927654584,1.0,11.042
+75879,What are light made of?,3508,1.0,0.6131471927654584,1.0,3.643
+75885,Which is the best place to do sex?,1024,1.0,0.6131471927654584,1.0,5.4
+77112,"How can the drive from Edmonton to Auckland be described, and how do these citie",5059,1.0,0.6131471927654584,1.0,12.272
+78987,Which are the worst movies in Bollywood?,2339,1.0,1.0,1.0,5.704
+80068,Will the US election counts be rigged?,1327,1.0,0.6131471927654584,1.0,6.382
+82582,Can we really earn money online? How?,4352,0.0,0.0,0.0,4.712
+83629,Which are the best IT companies in India?,4488,0.0,0.0,0.0,5.333
+86467,Which phone should I buy under 15k?,3768,1.0,0.3903800499921017,1.0,4.193
+87832,How do I get better at writing in general?,1135,0.0,0.0,0.0,5.706
+90445,How can we remove fat from our hips?,3000,0.0,0.0,0.0,5.006
+91972,Have you ever seen ghost?,186,0.0,0.0,0.0,3.46
+92809,What happened to Tamilnadu CM Jayalalitha?,4776,1.0,0.3903800499921017,1.0,4.171
+93522,Which is the best water purifier for the home? Where can I buy the best water pu,4638,1.0,1.0,1.0,11.842
+94053,How do I find Best SEO Company in Delhi?,3618,0.0,0.0,0.0,5.743
+101583,What is the easiest way to make money online without spending a lot of time or m,2561,0.0,0.0,0.0,10.664
+112017,What will be a person after he dies? What happens to him...?,3582,0.0,0.0,0.0,10.513
+112859,How in heaven's name would I dress like a workout guy from the year 1990 in the ,1775,1.0,0.6131471927654584,1.0,16.686
+116692,Do you think the Indian educational system should change?,1465,1.0,0.6131471927654584,1.0,7.576
+123912,How can I find out what my cell phone number is?,3826,1.0,0.6131471927654584,1.0,10.712
+125630,Why do we need Java programming?,605,0.0,0.0,0.0,4.437
+135988,Is Donald Trump very smart?,3391,1.0,1.0,1.0,3.802
+136876,What are Some mind blowing technology tools?,4346,0.0,0.0,0.0,5.667
+137130,Which has been the biggest political scam in India till date?,4109,1.0,1.0,1.0,7.633
+141022,I'm 44 years old. I want to invest in mutual funds in india. Which is the best m,5070,1.0,0.6131471927654584,1.0,13.74
+142423,What are some horror movies of 2016 worth watching?,3123,1.0,0.6131471927654584,1.0,6.919
+146116,"What age do you think is too late to start medical school, based off of your own",1474,1.0,0.6131471927654584,1.0,12.449
+146595,What was the main cause that ended World War One?,1002,0.0,0.0,0.0,6.866
+150494,"Do Australians use the term ""sheila"" in normal conversation?",3683,1.0,0.6131471927654584,1.0,7.404
+152284,What is a good cheap hotel in Goa close to the beach and night clubs?,1246,0.0,0.0,0.0,11.431
+153098,What is the best novel of all time?,207,0.0,0.0,0.0,5.116

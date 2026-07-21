@@ -1,0 +1,2 @@
+dataset,n_docs,corpus_ram_mb,docs_per_mb,bm25_build_s,faiss_build_s,total_build_s,index_ram_mb
+arguana,8674,16.199,535.5,0.791,20.185,20.977,12.706

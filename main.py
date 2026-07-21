@@ -39,7 +39,7 @@ def run_demonstration(use_llm: bool = True, load_state: bool = False) -> None:
     rag = AdaptiveRAGSystem(
         cache_capacity=5,
         similarity_threshold=0.90,     # raised from 0.85
-        data_path="data/iit_dharwad_corpus.json",
+        data_path="data/scifact_corpus_full.json",
         ttl_seconds=86400,             # 24-hour TTL
     )
 

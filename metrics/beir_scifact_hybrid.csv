@@ -1,0 +1,151 @@
+qid,query,retrieved,hit@1,ndcg@10,mrr@10,latency_ms
+1,0-dimensional biomaterials show inductive properties.,17388232,0.0,0.0,0.0,13703.063
+3,"1,000 genomes project enables mapping of genetic sequence variation consisting o",2739854,0.0,0.0,0.0,84.27
+5,1/2000 in UK have abnormal PrP positivity.,13734012,1.0,1.0,1.0,41.845
+13,5% of perinatal mortality is due to low birth weight.,7662395,0.0,0.0,0.0,67.176
+36,A deficiency of vitamin B12 increases blood levels of homocysteine.,18557974,0.0,0.0,0.0,76.812
+42,A high microerythrocyte count raises vulnerability to severe anemia in homozygou,18174210,1.0,1.0,1.0,64.022
+48,"A total of 1,000 people in the UK are asymptomatic carriers of vCJD infection.",18617259,0.0,0.0,0.0,63.37
+49,ADAR1 binds to Dicer to cleave pre-miRNA.,5953485,1.0,1.0,1.0,72.877
+50,AIRE is expressed in some skin tumors.,12580014,1.0,1.0,1.0,53.134
+51,ALDH1 expression is associated with better breast cancer outcomes.,45638119,1.0,1.0,1.0,46.908
+53,ALDH1 expression is associated with poorer prognosis in breast cancer.,45638119,1.0,1.0,1.0,45.292
+56,APOE4 expression in iPSC-derived neurons increases AlphaBeta production and tau ,4709641,1.0,1.0,1.0,54.959
+57,APOE4 expression in iPSC-derived neurons increases AlphaBeta production and tau ,4709641,1.0,1.0,1.0,79.281
+70,Activation of PPM1D suppresses p53 function.,11903247,0.0,0.0,0.0,32.515
+72,Activator-inhibitor pairs are provided dorsally by Admpchordin.,6076903,1.0,1.0,1.0,34.835
+75,"Active H. pylori urease has a polymeric structure that compromises two subunits,",4387784,1.0,1.0,1.0,49.055
+94,Albendazole is used to treat lymphatic filariasis.,1215116,1.0,1.0,1.0,38.402
+99,Alizarin forms hydrogen bonds with residues involved in PGAM1 substrate binding.,18810195,1.0,1.0,1.0,56.218
+100,All hematopoietic stem cells segregate their chromosomes randomly.,4381486,1.0,1.0,1.0,42.022
+113,Angiotensin converting enzyme inhibitors are associated with increased risk for ,6157837,1.0,1.0,1.0,37.17
+115,Anthrax spores can be disposed of easily after they are dispersed.,33872649,1.0,1.0,1.0,40.924
+118,Antibiotic induced alterations in the gut microbiome reduce resistance against C,4465735,0.0,0.0,0.0,47.474
+124,Antiretroviral therapy reduces rates of tuberculosis across a broad range of CD4,4883040,1.0,1.0,1.0,60.862
+127,Arginine 90 in p150n is important for interaction with EB1.,35231675,0.0,0.0,0.0,69.19
+128,Arterioles have a larger lumen diameter than venules.,23513718,0.0,0.0,0.0,61.634
+129,Articles published in open access format are less likely to be cited than tradit,27768226,1.0,1.0,1.0,56.551
+130,Articles published in open access format are more likely to be cited than tradit,27768226,1.0,1.0,1.0,55.988
+132,Aspirin inhibits the production of PGE2.,7613033,0.0,0.0,0.0,42.18
+133,Assembly of invadopodia is triggered by focal generation of phosphatidylinositol,12640810,1.0,0.3391602052736161,1.0,71.215
+137,Asymptomatic visual impairment screening in elderly populations does not lead to,26016929,1.0,1.0,1.0,67.976
+141,Auditory entrainment is strengthened when people see congruent visual and audito,14437255,1.0,0.6131471927654584,1.0,52.237
+142,Autologous transplantation of mesenchymal stem cells causes a higher rate of opp,10582939,1.0,1.0,1.0,55.654
+143,Autologous transplantation of mesenchymal stem cells causes fewer opportunistic ,10582939,1.0,1.0,1.0,57.402
+146,Autologous transplantation of mesenchymal stem cells has lower rates of rejectio,10582939,1.0,1.0,1.0,55.395
+148,Autophagy declines in aged organisms.,1084345,1.0,1.0,1.0,28.236
+163,Bariatric surgery has a positive impact on mental health.,18872233,1.0,1.0,1.0,31.349
+171,Basophils counteract disease development in patients with systemic lupus erythem,12670680,1.0,1.0,1.0,45.107
+179,Birth-weight is positively associated with breast cancer.,25973484,0.0,0.0,0.0,36.474
+180,Blocking the interaction between TDP-43 and respiratory complex I proteins ND3 a,16966326,1.0,1.0,1.0,97.787
+183,Bone marrow cells contribute to adult macrophage compartments.,8137081,0.0,0.0,0.0,43.585
+185,Breast cancer development is determined exclusively by genetic factors.,18340282,1.0,1.0,1.0,47.526
+198,CCL19 is absent within dLNs.,13778710,0.0,0.0,0.0,31.802
+208,CHEK2 is not associated with breast cancer.,13519661,1.0,1.0,1.0,32.642
+212,CR is associated with higher methylation age.,22038539,1.0,1.0,1.0,40.686
+213,CRP is not predictive of postoperative mortality following Coronary Artery Bypas,27054878,0.0,0.0,0.0,68.876
+216,CX3CR1 on the Th2 cells impairs T cell survival,21366394,1.0,1.0,1.0,41.652
+217,CX3CR1 on the Th2 cells promotes T cell survival,21366394,1.0,1.0,1.0,36.691
+218,CX3CR1 on the Th2 cells promotes airway inflammation.,21366394,1.0,1.0,1.0,31.901
+219,CX3CR1 on the Th2 cells suppresses airway inflammation.,21366394,1.0,1.0,1.0,43.558
+230,Carriers of the alcohol aldehyde dehydrogenase deficiency mutation drink less th,3067015,1.0,1.0,1.0,42.842
+232,Cataract and trachoma are the primary cause of blindness in Southern Sudan.,7655029,0.0,0.0,0.0,62.775
+233,Cell autonomous sex determination in somatic cells does not occur in Galliformes,4388470,1.0,1.0,1.0,66.883
+236,Cell autonomous sex determination in somatic cells occurs in Passeriformes.,4388470,1.0,1.0,1.0,66.209
+237,Cells lacking clpC have a defect in sporulation efficiency in Bacillus subtilis.,4942718,1.0,1.0,1.0,68.985
+238,Cells undergoing methionine restriction may activate miRNAs.,4463811,0.0,0.0,0.0,49.253
+239,Cellular aging closely links to an older appearance.,22264117,0.0,0.0,0.0,22.705
+248,Chenodeosycholic acid treatment increases whole-body energy expenditure.,1568684,1.0,1.0,1.0,22.311
+249,Chenodeosycholic acid treatment reduces whole-body energy expenditure.,1568684,1.0,1.0,1.0,25.276
+261,"Chronic aerobic exercise alters endothelial function, improving vasodilating mec",32322418,0.0,0.0,0.0,36.477
+268,Cold exposure increases BAT recruitment.,970012,1.0,1.0,1.0,17.667
+269,Cold exposure reduces BAT recruitment.,970012,1.0,1.0,1.0,22.072
+274,Combination nicotine replacement therapies with varenicline or bupropion lead to,11614737,1.0,1.0,1.0,44.25
+275,Combining phosphatidylinositide 3-kinase and MEK 1/2 inhibitors is effective at ,4920376,0.0,0.0,0.0,32.727
+279,Commelina yellow mottle virus' (ComYMV) genome consists of 7489 baise pairs.,14376683,1.0,1.0,1.0,34.906
+294,Crossover hot spots are not found within gene promoters in Saccharomyces cerevis,10874408,1.0,1.0,1.0,42.922
+295,Crosstalk between dendritic cells (DCs) and innate lymphoid cells (ILCs) is impo,20310709,1.0,1.0,1.0,66.74
+298,Cytochrome c is released from the mitochondrial intermembrane space to cytosol d,39381118,1.0,1.0,1.0,49.831
+300,Cytosolic proteins bind to iron-responsive elements on mRNAs coding for DMT1. Cy,16120395,0.0,0.0,0.0,91.956
+303,DMRT1 is a sex-determining gene that is epigenetically regulated by the MHM regi,4085204,0.0,0.0,0.0,61.768
+312,De novo assembly of sequence data has more specific contigs than unassembled seq,14464451,0.0,0.0,0.0,61.733
+314,Deamination of cytidine to uridine on the minus strand of viral DNA results in c,544971,0.0,0.0,0.0,65.18
+324,Deleting Raptor reduces G-CSF levels.,4658268,0.0,0.0,0.0,25.506
+327,Deletion of αvβ8 does not result in a spontaneous inflammatory phenotype.,17997584,1.0,1.0,1.0,44.189
+338,Dexamethasone decreases risk of postoperative bleeding.,23349986,1.0,1.0,1.0,46.682
+343,Diabetic patients with acute coronary syndrome experience increased short-term a,5884524,1.0,0.6131471927654584,1.0,35.992
+350,Discrimination between the initiator and elongation tRNAs depends on the transla,16927286,1.0,1.0,1.0,33.106
+354,Downregulation and mislocalization of Scribble prevents cell transformation and ,8774475,1.0,1.0,1.0,31.344
+362,During the primary early antibody response activated B cells migrate toward the ,38587347,1.0,1.0,1.0,58.623
+380,Enhanced early production of inflammatory chemokines improves viral control in t,19005293,1.0,1.0,1.0,41.676
+384,Epidemiological disease burden from noncommunicable diseases is more prevalent i,8582337,0.0,0.0,0.0,49.906
+385,Epigenetic modulating agents (EMAs) modulate antitumor immune response in a canc,1032372,0.0,0.0,0.0,46.388
+386,Errors in peripheral IV drug administration are most common during bolus adminis,16495649,1.0,1.0,1.0,48.567
+388,Ethanol stress decreases the expression of IBP in bacteria.,21602220,0.0,0.0,0.0,39.393
+399,Exposure to fine particulate air pollution is relate to anxiety prevalence.,791050,1.0,1.0,1.0,35.297
+410,Febrile seizures increase the threshold for development of epilepsy.,14924526,1.0,1.0,1.0,64.707
+411,Febrile seizures reduce the threshold for development of epilepsy.,14924526,1.0,1.0,1.0,59.278
+415,Female carriers of the Apolipoprotein E4 (APOE4) allele have increased risk for ,18852643,0.0,0.0,0.0,38.891
+421,Flexible molecules experience greater steric hindrance in the tumor microenvirom,44640124,0.0,0.0,0.0,30.275
+431,FoxO3a activation in neuronal death is mediated by reactive oxygen species (ROS),2543135,0.0,0.0,0.0,40.332
+436,Free histones are degraded by a Rad53-dependent mechanism once DNA has been repl,14637235,1.0,1.0,1.0,30.325
+437,Functional consequences of genomic alterations due to Myelodysplastic syndrome (,3391547,0.0,0.0,0.0,38.366
+439,Fz/PCP-dependent Pk localizes to the anterior membrane of neuroectoderm cells du,5395426,0.0,0.0,0.0,35.882
+440,Fz/PCP-dependent Pk localizes to the anterior membrane of notochord cells during,4932668,0.0,0.0,0.0,36.898
+443,GATA-3 is important for hematopoietic stem cell (HSC) function.,10165258,1.0,1.0,1.0,40.317
+452,Gene expression does not vary appreciably across genetically identical cells.,9154703,0.0,0.0,0.0,35.824
+475,Glycolysis is one of the primary glycometabolic pathways in cells.,23576165,0.0,0.0,0.0,44.365
+478,Golli-deficient T-cells prefer to differentiate into an anergic phenotype in the,2506153,0.0,0.0,0.0,54.114
+501,Headaches are not correlated with cognitive impairment.,17930286,1.0,1.0,1.0,23.157
+502,Healthcare delivery efficiency in crowded delivery centers is impaired by improv,10854174,0.0,0.0,0.0,51.782
+507,Helminths interfere with immune system control of macrophages activated by IL-4 ,7433668,0.0,0.0,0.0,45.325
+508,Hematopoietic Stem Cell purification reaches purity rate of up to 50%.,25516011,0.0,0.0,0.0,41.785
+513,High cardiopulmonary fitness causes increased mortality rate.,12770738,0.0,0.0,0.0,26.86
+514,High dietary calcium intakes are unnecessary for prevention of secondary hyperpa,4462079,0.0,0.0,0.0,49.386
+516,High levels of CRP reduces the risk of exacerbations in chronic obstructive pulm,29564505,1.0,1.0,1.0,41.268
+517,High levels of copeptin decrease risk of diabetes.,19658917,0.0,0.0,0.0,40.175
+521,High-sensitivity cardiac troponin T (HSCT-T) dosage may not be diagnostic if the,34873974,1.0,1.0,1.0,87.083
+525,Histone demethylase recruitment and a transient decrease in histone methylation ,13639330,1.0,1.0,1.0,55.646
+527,Homozygous deletion of murine Sbds gene from osterix-expressing mesenchymal stem,1617327,0.0,0.0,0.0,38.418
+528,Human T-lymphotropic virus type-I-associated myelopathy / tropical spastic parap,5476778,1.0,1.0,1.0,45.3
+532,Hyperfibrinogenemia decreases rates of femoropopliteal bypass thrombosis.,12991445,1.0,1.0,1.0,29.345
+533,Hyperfibrinogenemia increases rates of femoropopliteal bypass thrombosis.,12991445,1.0,1.0,1.0,36.576
+535,Hypertension is frequently observed in type 1 diabetes patients.,2138843,0.0,0.0,0.0,50.085
+536,Hypocretin neurones induce panicprone state in rats.,25440070,0.0,0.0,0.0,42.786
+539,Hypoglycemia increases the risk of dementia.,13282296,1.0,1.0,1.0,32.786
+540,Hypothalamic glutamate neurotransmission is crucial to energy balance.,2225918,0.0,0.0,0.0,38.556
+544,IFIT1 restricts viral replication by sequestrating mis-capped viral RNAs.,10559501,0.0,0.0,0.0,39.127
+549,IRG1 has antiviral effects against neurotropic viruses.,9433958,1.0,1.0,1.0,43.387
+551,ITAM phosphorylation prevents the transfer of the T cell receptor (TCR) signal f,8903143,0.0,0.0,0.0,52.462
+552,IgA plasma cells that are specific for transglutaminase 2 accumulate in the duod,1471041,1.0,1.0,1.0,48.45
+554,Immune complex triggered cell death leads to extracellular release of neutrophil,9878167,0.0,0.0,0.0,58.042
+560,Immune responses result in the development of inflammatory Th17 cells and anti-i,11233339,0.0,0.0,0.0,36.373
+569,"In adult tissue, most T cells are memory T cells.",23460562,1.0,1.0,1.0,39.231
+575,"In domesticated populations of Saccharomyces cerevisiae, whole chromosome aneupl",16686383,0.0,0.0,0.0,40.896
+577,"In mice, P. chabaudi parasites are able to proliferate faster early in infection",8133050,0.0,0.0,0.0,66.246
+578,"In mouse models, the loss of CSF1R facilitates MOZ-TIF2-induced leuekmogenesis.",8764879,1.0,1.0,1.0,32.079
+587,In transgenic mice harboring green florescent protein under the control of the S,7142113,0.0,0.0,0.0,77.111
+589,"In young and middle-aged adults, current or remote uses of ADHD medications do n",10984005,1.0,1.0,1.0,66.02
+593,Incidence of heart failure decreased by 10% in women since 1979.,19675911,1.0,1.0,1.0,48.332
+597,Incidence rates of cervical cancer have decreased.,36355784,1.0,0.46927872602275644,1.0,31.334
+598,Incidence rates of cervical cancer have increased due to nationwide screening pr,6561200,0.0,0.0,0.0,47.972
+613,Increased microtubule acetylation repairs LRRK2 Roc-COR domain mutation induced ,9638032,1.0,1.0,1.0,31.047
+619,Increased vessel density along with a reduction in fibrosis decreases the effica,20888849,1.0,0.6131471927654584,1.0,50.102
+623,Individuals with low serum vitamin D concentrations have increased risk of multi,4462079,0.0,0.0,0.0,41.221
+628,Infection of human T-cell lymphotropic virus type 1 is most frequent in individu,22705234,0.0,0.0,0.0,39.454
+636,"Inositol lipid 3-phosphatase PTEN converts Ptdlns(3,4)P 2 into phosphatidylinosi",42708716,0.0,0.0,0.0,41.71
+637,Input from  mental and physical health care professionals is effective at decrea,25649714,1.0,1.0,1.0,45.616
+641,Insomnia can be effectively treated with cognitive behavioral therapy.,5912283,1.0,0.6131471927654584,1.0,45.141
+644,Insulin increases risk of severe kidney failure.,26025820,0.0,0.0,0.0,42.543
+649,Integrating classroom-based collaborative learning with Web-based collaborative ,12789595,1.0,1.0,1.0,41.871
+659,Ivermectin is used to treat lymphatic filariasis.,1215116,1.0,1.0,1.0,36.258
+660,Ivermectin is used to treat onchocerciasis.,37628989,0.0,0.0,0.0,31.494
+674,LDL cholesterol has no involvement in the development of cardiovascular disease.,7662206,0.0,0.0,0.0,54.429
+684,Lack of clpC does not affect sporulation efficiency in Bacillus subtilis cells.,4942718,1.0,1.0,1.0,36.191
+690,Less than 10% of the gabonese children with Schimmelpenning-Feuerstein-Mims synd,4449524,0.0,0.0,0.0,51.821
+691,Leukemia associated Rho guanine nucleotide-exchange factor represses RhoA in res,10991183,1.0,1.0,1.0,36.661
+692,Leuko-increased blood increases infectious complications in red blood cell trans,24088502,1.0,1.0,1.0,29.615
+693,Leuko-reduced blood reduces infectious complications in red blood cell transfusi,3698758,0.0,0.0,0.0,29.674
+700,Localization of PIN1 in the Arabidopsis embryo does not require VPS9a,16557565,0.0,0.0,0.0,38.113
+702,Localization of PIN1 in the roots of Arabidopsis does not require VPS9a,16557565,0.0,0.0,0.0,52.158
+715,Low expression of miR7a does represses target genes and exerts a biological func,9159495,0.0,0.0,0.0,65.586

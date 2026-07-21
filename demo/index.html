@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vector-ARC — Semantic Cache Demo</title>
+<meta name="description" content="Live demo: ARC-based semantic cache with Groq LLM and FAISS retrieval over the SciFact corpus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ─── Tokens ───────────────────────────────────────────── */
+:root {
+  --bg:         #F8FAFC;
+  --bg2:        #F1F5F9;
+  --surface:    #FFFFFF;
+  --s2:         #F1F5F9;
+  --s3:         #E9EEF4;
+  --border:     #E2E8F0;
+  --border-s:   #CBD5E1;
+  --text:       #111827;
+  --text-m:     #6B7280;
+  --text-s:     #9CA3AF;
+  --accent:     #2563EB;
+  --accent-d:   #1D4ED8;
+  --accent-bg:  #EFF6FF;
+  --accent-t:   rgba(37,99,235,0.10);
+  --success:    #22C55E;
+  --success-bg: #F0FDF4;
+  --warn:       #F59E0B;
+  --warn-bg:    #FFFBEB;
+  --danger:     #EF4444;
+  --danger-bg:  #FEF2F2;
+  --t1c:        #2563EB;
+  --t2c:        #7C3AED;
+  --b1c:        #6B7280;
+  --b2c:        #4B5563;
+  --r:          8px;
+  --r-s:        5px;
+  --r-l:        12px;
+  --sh:         0 1px 2px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.04);
+  --sh-m:       0 4px 8px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.04);
+  --sh-l:       0 8px 20px rgba(0,0,0,.09),0 4px 8px rgba(0,0,0,.04);
+  --font:       'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:       'JetBrains Mono','Fira Code',ui-monospace,monospace;
+  --ease:       cubic-bezier(.4,0,.2,1);
+  --dur:        280ms;
+}
+[data-theme="dark"] {
+  --bg:        #0D1117;
+  --bg2:       #161B22;
+  --surface:   #1C2230;
+  --s2:        #21293A;
+  --s3:        #293347;
+  --border:    #2D3748;
+  --border-s:  #3D4A5E;
+  --text:      #F1F5F9;
+  --text-m:    #8B949E;
+  --text-s:    #6B7280;
+  --accent-bg: rgba(37,99,235,.14);
+  --accent-t:  rgba(37,99,235,.20);
+  --success-bg:rgba(34,197,94,.10);
+  --warn-bg:   rgba(245,158,11,.10);
+  --danger-bg: rgba(239,68,68,.10);
+  --sh:        0 1px 3px rgba(0,0,0,.35);
+  --sh-m:      0 4px 10px rgba(0,0,0,.40);
+  --sh-l:      0 8px 24px rgba(0,0,0,.50);
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.5;transition:background var(--dur),color var(--dur)}
+button{font-family:var(--font);cursor:pointer;border:none;background:none;color:inherit}
+textarea,input{font-family:var(--font)}
+svg{display:block;flex-shrink:0}
+a{color:var(--accent);text-decoration:none}
+
+/* ─── Nav ───────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:100;
+  height:48px;background:var(--surface);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;gap:16px;
+}
+.nav-brand{display:flex;align-items:center;gap:9px}
+.nav-logo{
+  width:26px;height:26px;border-radius:6px;flex-shrink:0;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+}
+.nav-logo svg{width:14px;height:14px}
+.brand-text{font-size:13.5px;font-weight:700;letter-spacing:-.3px}
+.brand-tag{font-size:10px;color:var(--text-s);font-weight:500}
+.nav-pills{display:flex;gap:20px;align-items:center}
+.nav-pill{text-align:center;line-height:1.1}
+.nav-pill-val{font-size:15px;font-weight:700;letter-spacing:-.5px;font-family:var(--mono);transition:color .2s}
+.nav-pill-lbl{font-size:10px;color:var(--text-s);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.nav-pill-val.c-accent{color:var(--accent)}
+.nav-pill-val.c-success{color:var(--success)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:30px;height:30px;border-radius:6px;
+  background:var(--s2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-m);transition:all .18s var(--ease);cursor:pointer;
+}
+.icon-btn:hover{background:var(--s3);color:var(--text)}
+.nav-badge{
+  padding:2px 9px;border-radius:999px;
+  font-size:10.5px;font-weight:600;letter-spacing:.2px;
+  background:var(--accent-bg);color:var(--accent);
+  border:1px solid rgba(37,99,235,.15);
+}
+.init-banner{
+  display:none;align-items:center;gap:8px;
+  padding:8px 20px;background:var(--warn-bg);
+  border-bottom:1px solid var(--border);font-size:12px;color:var(--warn);
+}
+.init-banner.show{display:flex}
+.spin{animation:spin .8s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.app{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 48px);overflow:hidden}
+@media(max-width:860px){.app{grid-template-columns:1fr;height:auto;overflow:auto}}
+.col{overflow-y:auto;padding:16px}
+.col-l{border-right:1px solid var(--border)}
+
+/* ─── Cards ─────────────────────────────────────────────── */
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-l);padding:16px;
+  box-shadow:var(--sh);margin-bottom:12px;
+}
+.card:last-child{margin-bottom:0}
+.card-hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:13px;
+}
+.card-title{
+  font-size:11px;font-weight:600;color:var(--text-s);
+  text-transform:uppercase;letter-spacing:.7px;
+  display:flex;align-items:center;gap:7px;
+}
+.cd{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.card-action{font-size:11px;color:var(--text-s);cursor:pointer;background:none;border:none;font-family:var(--font)}
+.card-action:hover{color:var(--text)}
+
+/* ─── Example Buttons ────────────────────────────────────── */
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:13px}
+.ex-btn{
+  padding:8px 11px;border-radius:var(--r-s);
+  border:1px solid var(--border);background:var(--surface);
+  color:var(--text-m);font-size:12px;font-weight:500;
+  cursor:pointer;text-align:left;transition:all .18s var(--ease);
+  line-height:1.35;
+}
+.ex-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+.ex-btn.active{border-color:var(--accent);background:var(--accent-bg);color:var(--accent);font-weight:600}
+.ex-btn .ec{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text-s);display:block;margin-bottom:2px}
+.ex-btn.active .ec{color:var(--accent);opacity:.7}
+
+/* ─── Query Input ────────────────────────────────────────── */
+.q-wrap{position:relative;margin-bottom:11px}
+.q-ta{
+  width:100%;padding:10px 13px;
+  border:1px solid var(--border);border-radius:var(--r);
+  background:var(--surface);color:var(--text);
+  font-size:13px;resize:none;outline:none;
+  transition:border-color .18s,box-shadow .18s;min-height:68px;
+}
+.q-ta:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-t)}
+.q-ta::placeholder{color:var(--text-s)}
+.q-ta:disabled{opacity:.6;cursor:not-allowed}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.btn-row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 16px;border-radius:var(--r-s);
+  font-size:12.5px;font-weight:600;letter-spacing:-.1px;
+  transition:all var(--dur) var(--ease);cursor:pointer;border:none;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(37,99,235,.3)}
+.btn-primary:hover:not(:disabled){background:var(--accent-d);box-shadow:0 3px 8px rgba(37,99,235,.35);transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-ghost{background:var(--s2);color:var(--text-m);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--s3);color:var(--text)}
+.btn-danger-ghost{background:var(--danger-bg);color:var(--danger);border:1px solid rgba(239,68,68,.2)}
+.btn-danger-ghost:hover{background:var(--danger);color:#fff}
+
+/* ─── Pipeline ───────────────────────────────────────────── */
+.pipe-wrap{position:relative;width:100%;padding-bottom:28%;overflow:visible}
+.pipe-wrap svg{position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible}
+/* SVG node states — all via setAttribute! */
+.pn rect{transition:fill .28s var(--ease),stroke .28s var(--ease);fill:var(--s2);stroke:var(--border-s);stroke-width:1.5}
+.pn .nt{fill:var(--text-s);font-family:var(--font);font-size:9.5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;transition:fill .28s}
+.pn .ns{fill:var(--text-s);font-family:var(--font);font-size:8.5px;transition:fill .28s;opacity:.75}
+.pn .nl{fill:var(--text-s);font-family:var(--mono);font-size:9px;opacity:0;transition:opacity .3s}
+.pn.na rect{fill:var(--accent-bg);stroke:var(--accent)}
+.pn.na .nt{fill:var(--accent)}
+.pn.ns_ rect{fill:var(--success-bg);stroke:var(--success)}
+.pn.ns_ .nt{fill:var(--success)}
+.pn.ns_ .nl{opacity:1;fill:var(--success)}
+.pn.nh rect{fill:var(--success-bg);stroke:var(--success)}
+.pn.nh .nt{fill:var(--success)}
+.pn.nh .nl{opacity:1;fill:var(--success)}
+.pn.nm rect{fill:var(--warn-bg);stroke:var(--warn)}
+.pn.nm .nt{fill:var(--warn)}
+.pn.nm .nl{opacity:1;fill:var(--warn)}
+/* Connections */
+.pc{stroke:var(--border-s);stroke-width:1.5;fill:none;stroke-dasharray:4 3;opacity:.45;transition:stroke .3s,stroke-width .3s,opacity .3s}
+.pc.ca{stroke:var(--accent);stroke-width:2.5;opacity:1;stroke-dasharray:none!important}
+.pc.cs{stroke:var(--success);stroke-width:2;opacity:1;stroke-dasharray:none!important}
+.pc.cm{stroke:var(--warn);stroke-width:2.5;opacity:1;stroke-dasharray:none!important}
+.pc.cl{stroke:#7C3AED;stroke-width:2.5;opacity:1;stroke-dasharray:none!important}
+.pc.cd_{stroke:var(--border-s);stroke-width:1.5;opacity:.4;stroke-dasharray:4 3}
+/* Path labels */
+.plbl{fill:var(--text-s);font-family:var(--font);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;opacity:0;transition:opacity .3s}
+.plbl.show{opacity:1}
+.plbl.lh{fill:var(--success)}
+.plbl.lm{fill:var(--warn)}
+
+/* ─── Step bar ───────────────────────────────────────────── */
+.step-bar{
+  display:flex;align-items:center;gap:9px;margin-top:11px;
+  padding:8px 12px;background:var(--s2);border-radius:var(--r-s);
+  border:1px solid var(--border);min-height:36px;
+}
+.s-ico{font-size:12px;flex-shrink:0}
+.s-txt{font-size:12px;color:var(--text-m);flex:1;line-height:1.3}
+.s-txt strong{color:var(--text);font-weight:600}
+.s-chip{
+  padding:2px 8px;border-radius:999px;font-size:9.5px;font-weight:700;
+  letter-spacing:.4px;text-transform:uppercase;flex-shrink:0;
+  background:var(--accent-bg);color:var(--accent);
+  transition:all .2s;
+}
+.s-chip.hit{background:var(--success-bg);color:var(--success)}
+.s-chip.miss{background:var(--warn-bg);color:var(--warn)}
+.s-chip.llm{background:rgba(124,58,237,.1);color:#7C3AED}
+.s-chip.done{background:var(--success-bg);color:var(--success)}
+
+/* ─── Log ────────────────────────────────────────────────── */
+.log-box{
+  max-height:192px;overflow-y:auto;
+  font-family:var(--mono);font-size:11px;
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:var(--r);padding:8px;
+  display:flex;flex-direction:column;gap:2px;
+}
+.log-box::-webkit-scrollbar{width:3px}
+.log-box::-webkit-scrollbar-thumb{background:var(--border-s);border-radius:3px}
+.le{display:flex;gap:8px;padding:2px 3px;border-radius:3px;animation:fadeIn .18s ease}
+.le:hover{background:var(--s3)}
+@keyframes fadeIn{from{opacity:0;transform:translateX(-3px)}to{opacity:1;transform:none}}
+.le-ts{color:var(--text-s);flex-shrink:0;font-size:10px;padding-top:1px}
+.le-msg{color:var(--text-m);line-height:1.4;word-break:break-word}
+.le-msg .hi{color:var(--accent);font-weight:500}
+.le-msg .ok{color:var(--success)}
+.le-msg .wa{color:var(--warn)}
+.le-msg .vi{color:#7C3AED}
+.le-msg .er{color:var(--danger)}
+.log-empty{color:var(--text-s);font-family:var(--font);font-size:12px;text-align:center;padding:16px 0}
+
+/* ─── Answer Panel ───────────────────────────────────────── */
+.answer-panel{position:relative}
+.answer-idle{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:140px;gap:9px;color:var(--text-s);text-align:center;
+}
+.answer-idle svg{opacity:.18}
+.answer-idle p{font-size:12.5px;line-height:1.5;max-width:240px}
+.answer-idle .hint{font-size:11px;color:var(--text-s);margin-top:2px;font-family:var(--mono)}
+.answer-loading{
+  display:none;flex-direction:column;gap:10px;
+  min-height:140px;align-items:center;justify-content:center;
+}
+.answer-loading.show{display:flex}
+.skeleton{background:linear-gradient(90deg,var(--s2) 25%,var(--s3) 50%,var(--s2) 75%);background-size:200%;border-radius:4px;animation:shimmer 1.4s infinite}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+.sk-line{height:12px;width:100%;border-radius:3px}
+.sk-line.w80{width:80%}
+.sk-line.w60{width:60%}
+.answer-result{display:none;animation:slideUp .3s var(--ease)}
+.answer-result.show{display:block}
+@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ans-header{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  gap:8px;padding:9px 12px;border-radius:var(--r-s);
+  background:var(--s2);margin-bottom:11px;
+}
+.ans-source{display:flex;align-items:center;gap:7px}
+.src-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.src-dot.hit{background:var(--success)}
+.src-dot.miss{background:#7C3AED}
+.src-label{font-size:11.5px;font-weight:600;color:var(--text-m);text-transform:uppercase;letter-spacing:.4px}
+.ans-chips{display:flex;gap:10px;flex-wrap:wrap}
+.ans-chip{font-size:11px;font-family:var(--mono);color:var(--text-s);display:flex;align-items:center;gap:3px}
+.ans-chip span{color:var(--text-m);font-weight:600}
+.ans-query{font-size:12px;color:var(--text-s);font-style:italic;margin-bottom:8px}
+.ans-text{font-size:13.5px;color:var(--text);line-height:1.75}
+.cursor{display:inline-block;width:2px;height:15px;background:var(--accent);animation:blink .8s step-end infinite;vertical-align:middle;margin-left:1px}
+@keyframes blink{50%{opacity:0}}
+.ans-ctx{margin-top:11px;padding:9px 11px;background:var(--s2);border-radius:var(--r-s);border:1px solid var(--border)}
+.ans-ctx-lbl{font-size:10px;font-weight:600;color:var(--text-s);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.ans-ctx-text{font-size:11px;color:var(--text-m);font-family:var(--mono);line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.ans-copy-row{display:flex;justify-content:flex-end;margin-top:10px}
+.badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 8px;border-radius:4px;font-size:10.5px;font-weight:600;font-family:var(--mono);
+}
+.badge.hit{background:var(--success-bg);color:var(--success)}
+.badge.miss{background:var(--warn-bg);color:var(--warn)}
+.badge.t1{background:var(--accent-bg);color:var(--accent)}
+.badge.t2{background:rgba(124,58,237,.1);color:#7C3AED}
+
+/* ─── ARC Visualizer ─────────────────────────────────────── */
+.arc-rows{display:flex;flex-direction:column;gap:9px}
+.arc-row{display:flex;align-items:flex-start;gap:9px}
+.arc-lbl{
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  width:26px;flex-shrink:0;padding-top:5px;line-height:1;
+}
+.arc-lbl.t1{color:var(--t1c)}
+.arc-lbl.t2{color:var(--t2c)}
+.arc-lbl.b1,.arc-lbl.b2{color:var(--text-s)}
+.arc-items{display:flex;flex-wrap:wrap;gap:5px;flex:1;min-height:24px;align-items:center}
+.arc-tag{
+  padding:2px 8px;border-radius:4px;font-size:10.5px;
+  font-family:var(--mono);font-weight:500;
+  animation:popIn .22s var(--ease);
+  max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+@keyframes popIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+.arc-tag.t1{background:var(--accent-bg);color:var(--accent)}
+.arc-tag.t2{background:rgba(124,58,237,.1);color:#7C3AED}
+.arc-tag.b1,.arc-tag.b2{background:var(--s2);color:var(--text-s);border:1px dashed var(--border-s)}
+.arc-empty{font-size:11px;color:var(--text-s);font-family:var(--mono)}
+.arc-div{height:1px;background:var(--border);margin:1px 0}
+.p-bar-row{display:flex;align-items:center;gap:9px;margin-top:10px;padding:7px 9px;background:var(--s2);border-radius:var(--r-s);border:1px solid var(--border)}
+.p-bar-lbl{font-size:10px;font-weight:600;color:var(--text-s);text-transform:uppercase;letter-spacing:.5px;flex-shrink:0}
+.p-bar-track{flex:1;height:5px;background:var(--border);border-radius:999px;overflow:hidden}
+.p-bar-fill{height:100%;background:linear-gradient(90deg,var(--t1c),var(--t2c));border-radius:999px;transition:width .4s var(--ease)}
+.p-bar-val{font-size:11.5px;font-family:var(--mono);font-weight:700;color:var(--accent);flex-shrink:0;min-width:28px;text-align:right}
+
+/* ─── Stats Grid ─────────────────────────────────────────── */
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);padding:11px 13px;box-shadow:var(--sh);
+}
+.stat-val{font-size:21px;font-weight:700;letter-spacing:-1px;font-family:var(--mono);line-height:1.1;transition:color .25s}
+.stat-val.ca{color:var(--accent)}
+.stat-val.cs{color:var(--success)}
+.stat-val.cw{color:var(--warn)}
+.stat-lbl{font-size:10px;color:var(--text-s);font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+.stat-sub{font-size:11px;color:var(--text-s);margin-top:1px;font-family:var(--mono)}
+
+/* ─── Donut + Bars ───────────────────────────────────────── */
+.charts-card{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.donut-svg{width:86px;height:86px}
+.donut-leg{display:flex;flex-direction:column;gap:4px;margin-top:5px}
+.donut-leg-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-m)}
+.donut-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.bars{display:flex;flex-direction:column;gap:7px}
+.bar-row{display:flex;align-items:center;gap:7px}
+.bar-lbl{font-size:11px;color:var(--text-m);width:68px;flex-shrink:0;text-align:right}
+.bar-track{flex:1;height:13px;background:var(--s2);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;transition:width .5s var(--ease);min-width:0}
+.bar-val{font-size:11px;font-family:var(--mono);color:var(--text-m);width:44px;flex-shrink:0}
+
+/* ─── Perf Table ─────────────────────────────────────────── */
+.perf-table{width:100%;border-collapse:collapse;font-size:12px}
+.perf-table td{padding:5px 7px;border-bottom:1px solid var(--border);color:var(--text-m)}
+.perf-table td:first-child{color:var(--text-s);font-weight:500;width:55%}
+.perf-table td:last-child{text-align:right;font-family:var(--mono);font-weight:600;color:var(--text)}
+.perf-table tr:last-child td{border-bottom:none}
+
+/* ─── Error state ────────────────────────────────────────── */
+.err-banner{
+  display:none;align-items:center;gap:8px;
+  padding:9px 12px;background:var(--danger-bg);
+  border:1px solid rgba(239,68,68,.2);border-radius:var(--r-s);
+  font-size:12px;color:var(--danger);margin-top:10px;
+}
+.err-banner.show{display:flex}
+
+</style>
+</head>
+<body>
+
+<div class="init-banner" id="init-banner">
+  <span class="spin">⏳</span>
+  System loading — embedding model is initialising. Please wait…
+</div>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="19" cy="17" r="3"/></svg>
+    </div>
+    <div>
+      <div class="brand-text">Vector-ARC</div>
+      <div class="brand-tag">Semantic Cache · RAG Demo</div>
+    </div>
+  </div>
+  <div class="nav-pills">
+    <div class="nav-pill"><div class="nav-pill-val c-accent" id="np-req">0</div><div class="nav-pill-lbl">Requests</div></div>
+    <div class="nav-pill"><div class="nav-pill-val c-success" id="np-hr">—</div><div class="nav-pill-lbl">Hit Rate</div></div>
+    <div class="nav-pill"><div class="nav-pill-val" id="np-lat">—</div><div class="nav-pill-lbl">Last Latency</div></div>
+    <div class="nav-pill"><div class="nav-pill-val" id="np-ghost">0 B</div><div class="nav-pill-lbl">Ghost Mem</div></div>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="theme-btn" title="Toggle dark/light">
+      <svg id="theme-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <div class="nav-badge" id="sys-badge">Initialising…</div>
+  </div>
+</nav>
+
+<div class="app">
+<!-- LEFT COLUMN -->
+<div class="col col-l">
+
+  <!-- Query card -->
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title"><div class="cd" style="background:var(--accent)"></div>Query</div>
+    </div>
+    <div class="ex-grid">
+      <button class="ex-btn" data-q="Does smoking cause lung cancer?"><span class="ec">Oncology</span>Does smoking cause lung cancer?</button>
+      <button class="ex-btn" data-q="Can aspirin reduce cardiovascular risk?"><span class="ec">Cardiology</span>Can aspirin reduce cardiovascular risk?</button>
+      <button class="ex-btn" data-q="Does exercise improve cognitive function?"><span class="ec">Neuroscience</span>Does exercise improve cognitive function?</button>
+      <button class="ex-btn" data-q="Is vitamin D deficiency linked to depression?"><span class="ec">Psychiatry</span>Is vitamin D deficiency linked to depression?</button>
+    </div>
+    <div class="q-wrap">
+      <textarea class="q-ta" id="q-ta" rows="3" placeholder="Type any scientific question… (Ctrl+Enter to run)"></textarea>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="run-btn">
+        <svg id="run-ico" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="5,3 19,12 5,21"/></svg>
+        <span id="run-txt">Run Query</span>
+      </button>
+      <button class="btn btn-ghost" id="replay-btn" style="display:none">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 1,10 7,10"/><path d="M3.51 15a9 9 0 1 0 .49-3.1"/></svg>
+        Replay
+      </button>
+      <button class="btn btn-danger-ghost" id="reset-btn" style="display:none">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14H6L5,6"/></svg>
+        Reset Cache
+      </button>
+    </div>
+    <div class="err-banner" id="err-banner">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span id="err-text">An error occurred.</span>
+    </div>
+  </div>
+
+  <!-- Pipeline card -->
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title"><div class="cd" style="background:#7C3AED"></div>Pipeline</div>
+    </div>
+    <div class="pipe-wrap">
+      <svg id="psv" viewBox="0 0 980 230" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <marker id="ma" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#2563EB"/></marker>
+          <marker id="ms" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#22C55E"/></marker>
+          <marker id="mw" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#F59E0B"/></marker>
+          <marker id="mv" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#7C3AED"/></marker>
+          <marker id="md" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#9CA3AF"/></marker>
+        </defs>
+        <!-- Connections -->
+        <line id="c-qe"  class="pc cd_" x1="132" y1="80" x2="188" y2="80" marker-end="url(#md)"/>
+        <line id="c-ec"  class="pc cd_" x1="308" y1="80" x2="366" y2="80" marker-end="url(#md)"/>
+        <line id="c-co"  class="pc cd_" x1="498" y1="80" x2="838" y2="80" marker-end="url(#md)" stroke-dasharray="5 3"/>
+        <line id="c-ccs" class="pc cd_" x1="432" y1="114" x2="432" y2="162" marker-end="url(#md)"/>
+        <line id="c-csl" class="pc cd_" x1="522" y1="188" x2="608" y2="188" marker-end="url(#md)"/>
+        <path id="c-lo"  class="pc cd_" d="M 728,188 C 800,188 908,150 908,114" fill="none" marker-end="url(#md)"/>
+        <!-- Path labels -->
+        <text id="lbl-hit"  class="plbl lh" x="648" y="70">&#x2713; Cache Hit</text>
+        <text id="lbl-miss" class="plbl lm" x="396" y="148">Miss</text>
+        <!-- Nodes -->
+        <g id="n-query" class="pn" transform="translate(10,44)">
+          <rect width="122" height="72" rx="8"/>
+          <text x="61" y="22" text-anchor="middle" class="nt">Query</text>
+          <text x="61" y="36" text-anchor="middle" class="ns">User Input</text>
+          <text x="61" y="54" text-anchor="middle" class="nl" id="lt-query">—</text>
+        </g>
+        <g id="n-embed" class="pn" transform="translate(188,44)">
+          <rect width="120" height="72" rx="8"/>
+          <text x="60" y="22" text-anchor="middle" class="nt">Embedder</text>
+          <text x="60" y="36" text-anchor="middle" class="ns">all-MiniLM-L6-v2</text>
+          <text x="60" y="54" text-anchor="middle" class="nl" id="lt-embed">—</text>
+        </g>
+        <g id="n-cache" class="pn" transform="translate(366,44)">
+          <rect width="132" height="72" rx="8"/>
+          <text x="66" y="22" text-anchor="middle" class="nt">ARC Cache</text>
+          <text x="66" y="36" text-anchor="middle" class="ns">T1 · T2 · B1 · B2</text>
+          <text x="66" y="54" text-anchor="middle" class="nl" id="lt-cache">—</text>
+        </g>
+        <g id="n-cold" class="pn" transform="translate(366,162)">
+          <rect width="156" height="48" rx="8"/>
+          <text x="78" y="18" text-anchor="middle" class="nt">Cold Storage</text>
+          <text x="78" y="30" text-anchor="middle" class="ns">BM25 + FAISS + RRF</text>
+          <text x="78" y="44" text-anchor="middle" class="nl" id="lt-cold">—</text>
+        </g>
+        <g id="n-llm" class="pn" transform="translate(608,162)">
+          <rect width="120" height="48" rx="8"/>
+          <text x="60" y="18" text-anchor="middle" class="nt">LLM</text>
+          <text x="60" y="30" text-anchor="middle" class="ns">Groq / Llama-3.3-70B</text>
+          <text x="60" y="44" text-anchor="middle" class="nl" id="lt-llm">—</text>
+        </g>
+        <g id="n-output" class="pn" transform="translate(838,44)">
+          <rect width="132" height="72" rx="8"/>
+          <text x="66" y="22" text-anchor="middle" class="nt">Response</text>
+          <text x="66" y="36" text-anchor="middle" class="ns">Answer + Cache</text>
+          <text x="66" y="54" text-anchor="middle" class="nl" id="lt-output">—</text>
+        </g>
+      </svg>
+    </div>
+    <div class="step-bar" id="step-bar">
+      <span class="s-ico" id="s-ico">○</span>
+      <span class="s-txt" id="s-txt">Select a query and press <strong>Run Query</strong>.</span>
+      <span class="s-chip" id="s-chip">IDLE</span>
+    </div>
+  </div>
+
+  <!-- Execution Log card -->
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title"><div class="cd" style="background:var(--success)"></div>Execution Log</div>
+      <button class="card-action" onclick="clearLog()">Clear</button>
+    </div>
+    <div class="log-box" id="log-box">
+      <div class="log-empty">No queries yet.</div>
+    </div>
+  </div>
+
+</div><!-- /col-l -->
+
+<!-- RIGHT COLUMN -->
+<div class="col col-r">
+
+  <!-- Answer Panel — primary section -->
+  <div class="card answer-panel">
+    <div class="card-hdr">
+      <div class="card-title"><div class="cd" style="background:var(--success)"></div>Answer</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <span id="ans-badge"></span>
+        <button class="card-action" id="copy-btn" style="display:none" onclick="copyAnswer()">Copy</button>
+      </div>
+    </div>
+
+    <!-- Idle state -->
+    <div class="answer-idle" id="ans-idle">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <p>Your answer will appear here after running a query.</p>
+      <div class="hint">Ctrl+Enter to submit</div>
+    </div>
+
+    <!-- Loading skeleton -->
+    <div class="answer-loading" id="ans-loading">
+      <div style="width:100%;display:flex;flex-direction:column;gap:9px">
+        <div class="skeleton sk-line"></div>
+        <div class="skeleton sk-line w80"></div>
+        <div class="skeleton sk-line w60"></div>
+        <div class="skeleton sk-line w80"></div>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="answer-result" id="ans-result">
+      <div class="ans-header">
+        <div class="ans-source">
+          <div class="src-dot" id="src-dot"></div>
+          <span class="src-label" id="src-label">—</span>
+        </div>
+        <div class="ans-chips">
+          <div class="ans-chip">⏱ <span id="ac-total">—</span></div>
+          <div class="ans-chip">📐 <span id="ac-sim">—</span></div>
+          <div class="ans-chip">📄 <span id="ac-docs">—</span></div>
+        </div>
+      </div>
+      <div class="ans-query" id="ans-query"></div>
+      <div class="ans-text" id="ans-text"></div>
+      <div class="ans-ctx" id="ans-ctx" style="display:none">
+        <div class="ans-ctx-lbl">Retrieved Context</div>
+        <div class="ans-ctx-text" id="ans-ctx-text"></div>
+      </div>
+      <div class="ans-copy-row">
+        <button class="btn btn-ghost" onclick="copyAnswer()" style="font-size:11px;padding:5px 12px">Copy Answer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARC Cache State -->
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title"><div class="cd" style="background:var(--t1c)"></div>ARC Cache State</div>
+      <div style="font-size:10.5px;font-family:var(--mono);color:var(--text-s)" id="arc-cap">cap=10 · p=0</div>
+    </div>
+    <div class="arc-rows">
+      <div class="arc-row"><div class="arc-lbl t1">T1</div><div class="arc-items" id="arc-t1"><span class="arc-empty">empty</span></div></div>
+      <div class="arc-row"><div class="arc-lbl t2">T2</div><div class="arc-items" id="arc-t2"><span class="arc-empty">empty</span></div></div>
+      <div class="arc-div"></div>
+      <div class="arc-row"><div class="arc-lbl b1">B1</div><div class="arc-items" id="arc-b1"><span class="arc-empty">empty</span></div></div>
+      <div class="arc-row"><div class="arc-lbl b2">B2</div><div class="arc-items" id="arc-b2"><span class="arc-empty">empty</span></div></div>
+    </div>
+    <div class="p-bar-row">
+      <span class="p-bar-lbl">T1 target (p)</span>
+      <div class="p-bar-track"><div class="p-bar-fill" id="p-fill" style="width:0%"></div></div>
+      <span class="p-bar-val" id="p-val">0</span>
+    </div>
+  </div>
+
+  <!-- Stats + Charts -->
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-val ca" id="sv-hr">—</div><div class="stat-lbl">Hit Rate</div><div class="stat-sub" id="sv-hm">0H / 0M</div></div>
+    <div class="stat-card"><div class="stat-val" id="sv-req">0</div><div class="stat-lbl">Requests</div><div class="stat-sub" id="sv-cold">0 cold calls</div></div>
+    <div class="stat-card"><div class="stat-val cs" id="sv-saved">0</div><div class="stat-lbl">LLM Saved</div><div class="stat-sub" id="sv-ghost">0 ghost hits</div></div>
+    <div class="stat-card"><div class="stat-val" id="sv-occ">0/10</div><div class="stat-lbl">Occupancy</div><div class="stat-sub" id="sv-p">p = 0</div></div>
+    <div class="stat-card"><div class="stat-val cw" id="sv-lat">—</div><div class="stat-lbl">Last Latency</div><div class="stat-sub" id="sv-sim">sim: —</div></div>
+    <div class="stat-card"><div class="stat-val" id="sv-gmem">0 B</div><div class="stat-lbl">Ghost Mem</div><div class="stat-sub">8 B/entry</div></div>
+  </div>
+
+  <div class="card charts-card" style="margin-bottom:12px">
+    <div>
+      <svg class="donut-svg" viewBox="0 0 86 86">
+        <circle cx="43" cy="43" r="30" fill="none" stroke="var(--border)" stroke-width="9"/>
+        <circle id="donut-miss" cx="43" cy="43" r="30" fill="none" stroke="var(--warn)" stroke-width="9"
+          stroke-dasharray="188.5 0" stroke-dashoffset="0" transform="rotate(-90 43 43)" style="transition:stroke-dasharray .5s var(--ease)"/>
+        <circle id="donut-hit" cx="43" cy="43" r="30" fill="none" stroke="var(--success)" stroke-width="9"
+          stroke-dasharray="0 188.5" stroke-dashoffset="0" transform="rotate(-90 43 43)" style="transition:stroke-dasharray .5s,stroke-dashoffset .5s"/>
+        <text x="43" y="39" text-anchor="middle" font-size="11" font-weight="700" fill="var(--text)" font-family="var(--mono)" id="donut-pct">0%</text>
+        <text x="43" y="50" text-anchor="middle" font-size="8" fill="var(--text-s)" font-family="var(--font)">hit rate</text>
+      </svg>
+      <div class="donut-leg">
+        <div class="donut-leg-item"><div class="donut-leg-dot" style="background:var(--success)"></div>Hit</div>
+        <div class="donut-leg-item"><div class="donut-leg-dot" style="background:var(--warn)"></div>Miss</div>
+      </div>
+    </div>
+    <div class="bars">
+      <div style="font-size:10px;font-weight:600;color:var(--text-s);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px">Latency Breakdown</div>
+      <div class="bar-row"><div class="bar-lbl">Embedding</div><div class="bar-track"><div class="bar-fill" id="bf-embed" style="width:0%;background:var(--accent)"></div></div><div class="bar-val" id="bv-embed">—</div></div>
+      <div class="bar-row"><div class="bar-lbl">Cache</div><div class="bar-track"><div class="bar-fill" id="bf-cache" style="width:0%;background:var(--t2c)"></div></div><div class="bar-val" id="bv-cache">—</div></div>
+      <div class="bar-row"><div class="bar-lbl">Cold Store</div><div class="bar-track"><div class="bar-fill" id="bf-cold" style="width:0%;background:var(--warn)"></div></div><div class="bar-val" id="bv-cold">—</div></div>
+      <div class="bar-row"><div class="bar-lbl">LLM</div><div class="bar-track"><div class="bar-fill" id="bf-llm" style="width:0%;background:#7C3AED"></div></div><div class="bar-val" id="bv-llm">—</div></div>
+    </div>
+  </div>
+
+  <!-- Performance breakdown table -->
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title"><div class="cd" style="background:var(--warn)"></div>Performance Breakdown</div>
+    </div>
+    <table class="perf-table">
+      <tr><td>Embedding time</td><td id="pt-embed">—</td></tr>
+      <tr><td>Cache lookup time</td><td id="pt-cache">—</td></tr>
+      <tr><td>Similarity score</td><td id="pt-sim">—</td></tr>
+      <tr><td>Margin (gap Top-1 / Top-2)</td><td id="pt-margin">—</td></tr>
+      <tr><td>Cold storage time</td><td id="pt-cold">—</td></tr>
+      <tr><td>LLM generation time</td><td id="pt-llm">—</td></tr>
+      <tr><td>Total latency</td><td id="pt-total">—</td></tr>
+      <tr><td>Cache decision</td><td id="pt-dec">—</td></tr>
+      <tr><td>Retrieved from</td><td id="pt-tier">—</td></tr>
+    </table>
+  </div>
+
+</div><!-- /col-r -->
+</div><!-- /app -->
+
+<script>
+
+'use strict';
+
+// ─── Config ──────────────────────────────────────────────────────────────────
+const API = location.protocol === 'file:' ? 'http://localhost:8080' : '';
+const THRESH = 0.90;
+
+// ─── State ───────────────────────────────────────────────────────────────────
+let running   = false;
+let lastResult = null;
+let initReady  = false;
+let lastQuery  = '';
+
+// ─── Utilities ───────────────────────────────────────────────────────────────
+const $  = id => document.getElementById(id);
+const ms = n  => typeof n === 'number' ? (n < 10 ? n.toFixed(1) : Math.round(n)) + ' ms' : '—';
+const delay = t => new Promise(r => setTimeout(r, t));
+
+// ─── SVG helpers (must use setAttribute — SVG className is SVGAnimatedString) ─
+function setNode(id, cls) {
+  const el = document.getElementById('n-' + id);
+  if (el) el.setAttribute('class', 'pn' + (cls ? ' ' + cls : ''));
+}
+function setConn(id, cls) {
+  const el = document.getElementById('c-' + id);
+  if (!el) return;
+  el.setAttribute('class', 'pc ' + cls);
+  const m = { ca:'ma', cs:'ms', cm:'mw', cl:'mv', cd_:'md' };
+  el.setAttribute('marker-end', 'url(#' + (m[cls] || 'md') + ')');
+}
+function setLat(id, val) {
+  const el = document.getElementById('lt-' + id);
+  if (el) el.textContent = val || '—';
+}
+function showLbl(id, show) {
+  const el = document.getElementById('lbl-' + id);
+  if (el) el.setAttribute('class', 'plbl l' + id + (show ? ' show' : ''));
+}
+function setStep(ico, txt, chip, chipCls) {
+  $('s-ico').textContent = ico;
+  $('s-txt').innerHTML = txt;
+  const c = $('s-chip');
+  c.textContent = chip;
+  c.setAttribute('class', 's-chip' + (chipCls ? ' ' + chipCls : ''));
+}
+
+// ─── Particle animation ───────────────────────────────────────────────────────
+const COORDS = {
+  qe: [132,80,188,80], ec: [308,80,366,80], co: [498,80,838,80],
+  ccs:[432,114,432,162], csl:[522,188,608,188], lo:[728,188,908,114]
+};
+function particle(id, color) {
+  const svg = $('psv');
+  const c = COORDS[id]; if (!c) return;
+  const el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  el.setAttribute('r','5'); el.setAttribute('fill', color || '#2563EB');
+  el.setAttribute('cx', c[0]); el.setAttribute('cy', c[1]); el.setAttribute('opacity','0');
+  svg.appendChild(el);
+  const s = performance.now(), dur = 520;
+  const dx = c[2]-c[0], dy = c[3]-c[1];
+  function tick(now) {
+    const t = Math.min(1, (now-s)/dur);
+    const e = t < .5 ? 2*t*t : -1+(4-2*t)*t;
+    el.setAttribute('cx', c[0]+dx*e); el.setAttribute('cy', c[1]+dy*e);
+    el.setAttribute('opacity', t<.08?t/.08:t>.85?(1-t)/.15:1);
+    t < 1 ? requestAnimationFrame(tick) : el.remove();
+  }
+  requestAnimationFrame(tick);
+}
+
+// ─── Reset pipeline ──────────────────────────────────────────────────────────
+function resetPipe() {
+  ['query','embed','cache','cold','llm','output'].forEach(n => setNode(n,''));
+  ['qe','ec','co','ccs','csl','lo'].forEach(c => setConn(c,'cd_'));
+  ['query','embed','cache','cold','llm','output'].forEach(n => setLat(n,''));
+  showLbl('hit',false); showLbl('miss',false);
+}
+
+// ─── Log ─────────────────────────────────────────────────────────────────────
+function addLog(ico, msg, cls) {
+  const box = $('log-box');
+  const emp = box.querySelector('.log-empty');
+  if (emp) emp.remove();
+  const e = document.createElement('div');
+  e.className = 'le';
+  const now = new Date();
+  const ts = now.toTimeString().slice(0,8) + '.' + String(now.getMilliseconds()).padStart(3,'0');
+  e.innerHTML = `<span class="le-ts">${ts}</span><span class="le-msg">${cls ? `<span class="${cls}">${msg}</span>` : msg}</span>`;
+  box.appendChild(e);
+  box.scrollTop = box.scrollHeight;
+}
+function clearLog() {
+  $('log-box').innerHTML = '<div class="log-empty">Cleared.</div>';
+}
+
+// ─── Show error ───────────────────────────────────────────────────────────────
+function showError(msg) {
+  $('err-text').textContent = msg;
+  $('err-banner').classList.add('show');
+}
+function hideError() { $('err-banner').classList.remove('show'); }
+
+// ─── Pipeline animation (post-API, using real data) ───────────────────────────
+async function animatePipeline(r) {
+  const t = r.times;
+  const isHit = r.cache_hit;
+
+  setNode('query','na');
+  setStep('📥','Query received','INPUT');
+  await delay(280);
+  setNode('query','ns_'); setLat('query','0 ms');
+
+  if (t.embed_ms > 0) {
+    setConn('qe','ca'); particle('qe','#2563EB');
+    setNode('embed','na');
+    setStep('⚙️',`Embedding generated — <strong>${t.embed_ms} ms</strong>`,'EMBEDDING');
+    await delay(320);
+    setNode('embed','ns_'); setLat('embed', ms(t.embed_ms));
+    setConn('qe','cs');
+  } else {
+    setNode('embed','ns_'); setLat('embed','skipped');
+    setStep('⚡','Exact fingerprint match — embedding skipped','EMBEDDING');
+    await delay(200);
+  }
+
+  setConn('ec','ca'); particle('ec','#2563EB');
+  setNode('cache','na');
+  setStep('🔍',`Cache scan — ${r.similarity ? `sim <strong>${r.similarity.toFixed(4)}</strong>` : 'empty cache'}`,'CACHE');
+  await delay(300);
+
+  if (isHit) {
+    setNode('cache','nh'); setLat('cache', ms(t.cache_ms));
+    showLbl('hit',true);
+    setConn('ec','cs');
+    setStep('✅',`Cache <strong>HIT</strong> — ${r.similarity.toFixed(4)} ≥ ${THRESH} | tier: ${r.cache_tier}`,'HIT','hit');
+    setConn('co','cs'); particle('co','#22C55E');
+    await delay(500);
+    setNode('output','nh'); setLat('output', ms(t.total_ms));
+  } else {
+    setNode('cache','nm'); setLat('cache', ms(t.cache_ms));
+    showLbl('miss',true);
+    setConn('ec','cs');
+    setStep('↓',`Cache <strong>MISS</strong> — ${r.similarity ? r.similarity.toFixed(4) + ' < ' + THRESH : 'empty'}`,'MISS','miss');
+    await delay(260);
+
+    setConn('ccs','cm'); particle('ccs','#F59E0B');
+    await delay(420);
+    setNode('cold','na');
+    setStep('📦','Cold storage — BM25 + FAISS + RRF retrieval','RETRIEVAL');
+    await delay(380);
+    setNode('cold','ns_'); setLat('cold', ms(t.cold_ms));
+    setConn('ccs','cs');
+
+    setConn('csl','cl'); particle('csl','#7C3AED');
+    await delay(420);
+    setNode('llm','na');
+    setStep('🤖',`LLM generating — <strong>Groq / Llama-3.3-70B</strong>`,'LLM','llm');
+    await delay(500);
+    setNode('llm','ns_'); setLat('llm', ms(t.llm_ms));
+    setConn('csl','cs');
+
+    setConn('lo','cl'); particle('lo','#7C3AED');
+    await delay(400);
+    setNode('output','ns_'); setLat('output', ms(t.total_ms));
+    setConn('lo','cs');
+  }
+
+  setStep('✓',`Done — <strong>${t.total_ms} ms</strong> total | ${isHit ? 'LLM skipped (cache hit)' : 'LLM called'}`, 'DONE', 'done');
+}
+
+// ─── Populate all dashboard panels ────────────────────────────────────────────
+function populateDashboard(r) {
+  const t = r.times, m = r.metrics, a = r.arc_state;
+
+  // Nav pills
+  $('np-req').textContent  = m.total;
+  $('np-hr').textContent   = m.hit_rate + '%';
+  $('np-lat').textContent  = ms(t.total_ms);
+  $('np-ghost').textContent = (m.ghost_bytes || 0) + ' B';
+
+  // Answer panel
+  $('ans-idle').style.display    = 'none';
+  $('ans-loading').style.display = 'none';
+  const res = $('ans-result');
+  res.classList.remove('show'); void res.offsetWidth;
+  res.style.display = '';
+  res.setAttribute('class','answer-result show');
+
+  const dot = $('src-dot'), lbl = $('src-label');
+  if (r.cache_hit) {
+    dot.setAttribute('class','src-dot hit');
+    lbl.textContent = `Served from cache (${r.cache_tier})`;
+  } else {
+    dot.setAttribute('class','src-dot miss');
+    lbl.textContent = 'Generated by LLM + cached';
+  }
+
+  $('ac-total').textContent = ms(t.total_ms);
+  $('ac-sim').textContent   = r.similarity ? r.similarity.toFixed(4) : '—';
+  $('ac-docs').textContent  = r.retrieved_docs > 0 ? r.retrieved_docs + ' docs' : 'cached';
+  $('ans-query').textContent = '\u201c' + r.query + '\u201d';
+
+  const txtEl = $('ans-text');
+  txtEl.innerHTML = '';
+  if (r.cache_hit) {
+    txtEl.textContent = r.answer;
+  } else {
+    const cur = document.createElement('span'); cur.className = 'cursor'; txtEl.appendChild(cur);
+    let i = 0; const full = r.answer || '';
+    const iv = setInterval(() => {
+      txtEl.insertBefore(document.createTextNode(full[i]), cur);
+      if (++i >= full.length) { clearInterval(iv); cur.remove(); }
+    }, 12);
+    if (r.context_preview) {
+      $('ans-ctx-text').textContent = r.context_preview;
+      $('ans-ctx').style.display = 'block';
+    }
+  }
+
+  // Answer badge
+  const badgeEl = $('ans-badge');
+  if (r.cache_hit) {
+    badgeEl.innerHTML = `<span class="badge hit">Cache ${r.cache_tier}</span>`;
+  } else {
+    badgeEl.innerHTML = '<span class="badge miss">Cache Miss</span>';
+  }
+  $('copy-btn').style.display = 'block';
+
+  // ARC state
+  function renderTier(elId, items, cls) {
+    const el = document.getElementById(elId);
+    if (!items || !items.length) { el.innerHTML = '<span class="arc-empty">empty</span>'; return; }
+    el.innerHTML = items.map(e => `<span class="arc-tag ${cls}" title="${e.key}">${e.lbl}</span>`).join('');
+  }
+  renderTier('arc-t1', a.t1, 't1');
+  renderTier('arc-t2', a.t2, 't2');
+  renderTier('arc-b1', a.b1, 'b1');
+  renderTier('arc-b2', a.b2, 'b2');
+  const pPct = a.capacity ? Math.round((a.p / a.capacity) * 100) : 0;
+  $('p-fill').style.width = pPct + '%';
+  $('p-val').textContent  = a.p;
+  $('arc-cap').textContent = `cap=${a.capacity} · p=${a.p} · hot=${a.hot}`;
+
+  // Stats grid
+  $('sv-hr').textContent   = m.hit_rate + '%';
+  $('sv-hm').textContent   = m.hits + 'H / ' + m.misses + 'M';
+  $('sv-req').textContent  = m.total;
+  $('sv-cold').textContent = m.cold_calls + ' cold calls';
+  $('sv-saved').textContent = m.hits;
+  $('sv-ghost').textContent = (m.b1 || 0) + (m.b2 || 0) > 0 ? (m.b1||0)+(m.b2||0) + ' ghost entries' : '—';
+  $('sv-occ').textContent  = a.hot + '/' + a.capacity;
+  $('sv-p').textContent    = 'p = ' + a.p;
+  $('sv-lat').textContent  = ms(t.total_ms);
+  $('sv-sim').textContent  = r.similarity ? 'sim: ' + r.similarity.toFixed(3) : 'sim: —';
+  $('sv-gmem').textContent = (m.ghost_bytes || 0) + ' B';
+
+  // Donut chart
+  const circ = 188.5; // 2π×30
+  const hitFrac = m.total > 0 ? m.hits / m.total : 0;
+  const hitArc  = circ * hitFrac;
+  const missArc = circ * (1 - hitFrac);
+  $('donut-hit').setAttribute('stroke-dasharray',  hitArc + ' ' + missArc);
+  $('donut-hit').setAttribute('stroke-dashoffset', -(missArc).toString());
+  $('donut-miss').setAttribute('stroke-dasharray', missArc + ' ' + hitArc);
+  $('donut-pct').textContent = m.hit_rate + '%';
+
+  // Latency bars
+  const maxL = Math.max(t.embed_ms||0, t.cache_ms||0, t.cold_ms||0, t.llm_ms||0, 1);
+  function bar(bId, vId, v) {
+    $(bId).style.width = ((v||0)/maxL*100) + '%';
+    $(vId).textContent = v ? ms(v) : '—';
+  }
+  bar('bf-embed','bv-embed',t.embed_ms);
+  bar('bf-cache','bv-cache',t.cache_ms);
+  bar('bf-cold','bv-cold',t.cold_ms);
+  bar('bf-llm','bv-llm',t.llm_ms);
+
+  // Perf table
+  $('pt-embed').textContent  = t.embed_ms ? ms(t.embed_ms) : '—';
+  $('pt-cache').textContent  = t.cache_ms ? ms(t.cache_ms) : '—';
+  $('pt-sim').textContent    = r.similarity ? r.similarity.toFixed(4) + (r.similarity >= THRESH ? ' ✓' : ' ✗') : '—';
+  $('pt-margin').textContent = r.margin ? r.margin.toFixed(4) : '—';
+  $('pt-cold').textContent   = t.cold_ms ? ms(t.cold_ms) : '—';
+  $('pt-llm').textContent    = t.llm_ms ? ms(t.llm_ms) : '—';
+  $('pt-total').textContent  = ms(t.total_ms);
+  $('pt-dec').textContent    = r.cache_hit ? '✅ Cache Hit' : '❌ Miss → LLM';
+  $('pt-tier').textContent   = r.cache_tier || '—';
+}
+
+// ─── Inject server-side execution log ────────────────────────────────────────
+function injectServerLog(steps) {
+  if (!steps || !steps.length) return;
+  steps.forEach(s => {
+    const msg = s.msg;
+    let cls = '';
+    if (msg.includes('HIT')) cls = 'ok';
+    else if (msg.includes('MISS')) cls = 'wa';
+    else if (msg.includes('LLM')) cls = 'vi';
+    else if (msg.includes('Error') || msg.includes('error')) cls = 'er';
+    addLog('', s.msg, cls);
+  });
+}
+
+// ─── Main run function ────────────────────────────────────────────────────────
+async function runQuery() {
+  if (running) return;
+  const query = $('q-ta').value.trim();
+  if (!query) { $('q-ta').focus(); return; }
+  if (!initReady) { showError('System still initialising. Please wait a few seconds.'); return; }
+
+  running = true;
+  lastQuery = query;
+  hideError();
+  resetPipe();
+
+  // Button state
+  $('run-btn').disabled = true;
+  $('replay-btn').style.display = 'none';
+  $('run-ico').outerHTML = '<span id="run-ico" class="spin" style="font-size:12px">⟳</span>';
+  $('run-txt').textContent = 'Running…';
+
+  // Answer panel: show skeleton
+  $('ans-idle').style.display    = 'none';
+  $('ans-result').setAttribute('class','answer-result');
+  $('ans-loading').setAttribute('class','answer-loading show');
+  $('ans-ctx').style.display = 'none';
+
+  addLog('▶', `Query: "${query.slice(0,60)}${query.length>60?'…':''}"`, 'hi');
+
+  try {
+    const resp = await fetch(API + '/api/query', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query }),
+    });
+
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({ error: `HTTP ${resp.status}` }));
+      throw new Error(err.error || `HTTP ${resp.status}`);
+    }
+
+    const r = await resp.json();
+    if (r.error) throw new Error(r.error);
+
+    lastResult = r;
+
+    // Inject server execution log
+    $('ans-loading').setAttribute('class','answer-loading');
+    injectServerLog(r.steps);
+
+    // Animate pipeline with real data
+    await animatePipeline(r);
+
+    // Populate all panels
+    populateDashboard(r);
+    $('reset-btn').style.display = 'inline-flex';
+
+  } catch (err) {
+    $('ans-loading').setAttribute('class','answer-loading');
+    $('ans-idle').style.display = 'flex';
+    resetPipe();
+    showError(err.message || 'Request failed. Is the server running?');
+    addLog('✖', err.message || 'Request failed', 'er');
+    console.error('runQuery error:', err);
+  }
+
+  // Restore button
+  running = false;
+  $('run-btn').disabled = false;
+  const ico = $('run-ico');
+  if (ico) ico.outerHTML = '<svg id="run-ico" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="5,3 19,12 5,21"/></svg>';
+  $('run-txt').textContent = 'Run Query';
+  $('replay-btn').style.display = 'inline-flex';
+}
+
+// ─── Copy answer ──────────────────────────────────────────────────────────────
+function copyAnswer() {
+  const text = $('ans-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.ans-copy-row button');
+    if (btn) { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy Answer', 1800); }
+  });
+}
+
+// ─── System status polling ────────────────────────────────────────────────────
+async function checkStatus() {
+  try {
+    const r = await fetch(API + '/api/status').then(r => r.json());
+    if (r.ready) {
+      initReady = true;
+      $('sys-badge').textContent = r.has_llm ? (r.llm || 'Ready') : 'No LLM';
+      $('sys-badge').style.background = 'var(--success-bg)';
+      $('sys-badge').style.color = 'var(--success)';
+      $('sys-badge').style.borderColor = 'rgba(34,197,94,.2)';
+      $('init-banner').classList.remove('show');
+      $('run-btn').disabled = false;
+      if (r.metrics && r.metrics.total > 0) {
+        // Sync any prior state
+        $('np-req').textContent = r.metrics.total;
+        $('np-hr').textContent  = r.metrics.hit_rate + '%';
+      }
+    } else if (r.initializing) {
+      $('init-banner').classList.add('show');
+      setTimeout(checkStatus, 2000);
+    } else {
+      $('sys-badge').textContent = 'Error';
+      $('sys-badge').style.color = 'var(--danger)';
+      showError(r.error || 'System failed to initialize.');
+    }
+  } catch (e) {
+    // Server not yet up — retry
+    setTimeout(checkStatus, 2500);
+  }
+}
+
+// ─── Event listeners ──────────────────────────────────────────────────────────
+document.querySelectorAll('.ex-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ex-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    $('q-ta').value = btn.getAttribute('data-q');
+  });
+});
+
+$('run-btn').addEventListener('click', runQuery);
+
+$('replay-btn').addEventListener('click', () => {
+  if (lastQuery) { $('q-ta').value = lastQuery; runQuery(); }
+});
+
+$('reset-btn').addEventListener('click', async () => {
+  try {
+    await fetch(API + '/api/reset', { method: 'POST' });
+    resetPipe();
+    $('ans-idle').style.display = 'flex';
+    $('ans-result').setAttribute('class','answer-result');
+    $('ans-loading').setAttribute('class','answer-loading');
+    $('ans-ctx').style.display = 'none';
+    $('ans-badge').innerHTML = '';
+    $('copy-btn').style.display = 'none';
+    $('reset-btn').style.display = 'none';
+    $('replay-btn').style.display = 'none';
+    document.querySelectorAll('.ex-btn').forEach(b => b.classList.remove('active'));
+    ['np-req','np-hr','np-lat','sv-hr','sv-req','sv-saved','sv-occ','sv-lat','sv-sim','sv-p','sv-hm','sv-cold','sv-ghost','sv-gmem','arc-cap'].forEach(id => {
+      const el = $(id); if (el) el.textContent = id.includes('req') || id.includes('saved') || id.includes('occ') ? '0' : '—';
+    });
+    ['arc-t1','arc-t2','arc-b1','arc-b2'].forEach(id => { const el=$(id); if(el) el.innerHTML='<span class="arc-empty">empty</span>'; });
+    $('p-fill').style.width = '0%'; $('p-val').textContent = '0';
+    $('donut-hit').setAttribute('stroke-dasharray','0 188.5');
+    $('donut-miss').setAttribute('stroke-dasharray','188.5 0');
+    $('donut-pct').textContent = '0%';
+    setStep('○', 'Cache reset. Run a query to begin.', 'IDLE');
+    ['pt-embed','pt-cache','pt-sim','pt-margin','pt-cold','pt-llm','pt-total','pt-dec','pt-tier'].forEach(id => { const el=$(id); if(el) el.textContent='—'; });
+    clearLog();
+    addLog('🔄','Cache reset — ARC state cleared','ok');
+    lastResult = null; lastQuery = '';
+  } catch(e) { showError('Reset failed: ' + e.message); }
+});
+
+$('q-ta').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); runQuery(); }
+});
+
+// ─── Dark mode ────────────────────────────────────────────────────────────────
+const MOON_SVG = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+const SUN_SVG  = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+$('theme-btn').addEventListener('click', () => {
+  const html = document.documentElement;
+  const dark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  $('theme-ico').innerHTML = dark ? SUN_SVG : MOON_SVG;
+  localStorage.setItem('arc-theme', dark ? 'light' : 'dark');
+});
+// Restore saved theme
+const saved = localStorage.getItem('arc-theme');
+if (saved) {
+  document.documentElement.setAttribute('data-theme', saved);
+  if (saved === 'dark') $('theme-ico').innerHTML = MOON_SVG;
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+$('run-btn').disabled = true;
+setStep('○', 'Connecting to Vector-ARC server…', 'IDLE');
+addLog('⏳', 'Connecting to backend at ' + (API || 'same origin'), '');
+checkStatus();
+
+</script>
+</body>
+</html>
