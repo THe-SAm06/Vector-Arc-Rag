@@ -9,6 +9,9 @@ torch==2.3.1
 # ── Cold storage ───────────────────────────────────────────────────────────────
 rank_bm25==0.2.2
 datasets==2.19.1
+duckdb>=1.0.0
+faiss-cpu>=1.7.4
+tqdm>=4.66.0
 
 # ── LLM (OpenAI-compatible — works for Groq, SiliconFlow, OpenRouter) ─────────
 openai>=1.30.0
