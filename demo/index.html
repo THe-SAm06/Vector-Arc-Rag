@@ -33,38 +33,78 @@
   --danger-bg:  #FEF2F2;
   --t1c:        #2563EB;
   --t2c:        #7C3AED;
-  --b1c:        #6B7280;
-  --b2c:        #4B5563;
-  --r:          8px;
-  --r-s:        5px;
-  --r-l:        12px;
-  --sh:         0 1px 2px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.04);
-  --sh-m:       0 4px 8px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.04);
-  --sh-l:       0 8px 20px rgba(0,0,0,.09),0 4px 8px rgba(0,0,0,.04);
-  --font:       'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  --mono:       'JetBrains Mono','Fira Code',ui-monospace,monospace;
-  --ease:       cubic-bezier(.4,0,.2,1);
-  --dur:        280ms;
+  /* Linear / Vercel inspired minimal theme */
+  --bg: #F9FAFB;
+  --surface: #FFFFFF;
+  --border: #E5E7EB;
+  --border-s: #D1D5DB;
+  
+  --text: #111827;
+  --text-m: #374151;
+  --text-s: #6B7280;
+  
+  --accent: #000000;
+  --accent-d: #1F2937;
+  --accent-bg: #F3F4F6;
+  --accent-t: rgba(0,0,0,0.1);
+  
+  --success: #059669;
+  --success-bg: #ECFDF5;
+  --warn: #D97706;
+  --warn-bg: #FFFBEB;
+  --danger: #DC2626;
+  --danger-bg: #FEF2F2;
+
+  --s2: #F3F4F6;
+  --s3: #E5E7EB;
+  
+  --t1c: #000000;
+  --t2c: #4B5563;
+  --b1c: #9CA3AF;
+  --b2c: #D1D5DB;
+  
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --sh: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --r-l: 12px;
+  --r: 8px;
+  --r-s: 6px;
+  --dur: 0.2s;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 [data-theme="dark"] {
-  --bg:        #0D1117;
-  --bg2:       #161B22;
-  --surface:   #1C2230;
-  --s2:        #21293A;
-  --s3:        #293347;
-  --border:    #2D3748;
-  --border-s:  #3D4A5E;
-  --text:      #F1F5F9;
-  --text-m:    #8B949E;
-  --text-s:    #6B7280;
-  --accent-bg: rgba(37,99,235,.14);
-  --accent-t:  rgba(37,99,235,.20);
-  --success-bg:rgba(34,197,94,.10);
-  --warn-bg:   rgba(245,158,11,.10);
-  --danger-bg: rgba(239,68,68,.10);
-  --sh:        0 1px 3px rgba(0,0,0,.35);
-  --sh-m:      0 4px 10px rgba(0,0,0,.40);
-  --sh-l:      0 8px 24px rgba(0,0,0,.50);
+  --bg: #000000;
+  --surface: #111111;
+  --border: #333333;
+  --border-s: #444444;
+  
+  --text: #EDEDED;
+  --text-m: #A1A1AA;
+  --text-s: #71717A;
+  
+  --accent: #FFFFFF;
+  --accent-d: #E5E5E5;
+  --accent-bg: #222222;
+  --accent-t: rgba(255,255,255,0.15);
+  
+  --success: #34D399;
+  --success-bg: rgba(5,150,105,0.15);
+  --warn: #FBBF24;
+  --warn-bg: rgba(217,119,6,0.15);
+  --danger: #F87171;
+  --danger-bg: rgba(220,38,38,0.15);
+
+  --s2: #1A1A1A;
+  --s3: #2A2A2A;
+
+  --t1c: #FFFFFF;
+  --t2c: #A1A1AA;
+  --b1c: #52525B;
+  --b2c: #3F3F46;
+  
+  --sh: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 /* ─── Reset ─────────────────────────────────────────────── */
@@ -133,6 +173,7 @@ a{color:var(--accent);text-decoration:none}
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-l);padding:16px;
   box-shadow:var(--sh);margin-bottom:12px;
+  transition: box-shadow var(--dur) var(--ease);
 }
 .card:last-child{margin-bottom:0}
 .card-hdr{
@@ -184,8 +225,8 @@ a{color:var(--accent);text-decoration:none}
   transition:all var(--dur) var(--ease);cursor:pointer;border:none;
 }
 .btn:active{transform:scale(.97)}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(37,99,235,.3)}
-.btn-primary:hover:not(:disabled){background:var(--accent-d);box-shadow:0 3px 8px rgba(37,99,235,.35);transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--bg);box-shadow:0 1px 2px rgba(0,0,0,0.1)}
+.btn-primary:hover:not(:disabled){background:var(--accent-d);box-shadow:0 3px 6px rgba(0,0,0,0.1);transform:translateY(-1px)}
 .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
 .btn-ghost{background:var(--s2);color:var(--text-m);border:1px solid var(--border)}
 .btn-ghost:hover{background:var(--s3);color:var(--text)}
@@ -412,6 +453,7 @@ a{color:var(--accent);text-decoration:none}
     <div class="nav-pill"><div class="nav-pill-val c-accent" id="np-req">0</div><div class="nav-pill-lbl">Requests</div></div>
     <div class="nav-pill"><div class="nav-pill-val c-success" id="np-hr">—</div><div class="nav-pill-lbl">Hit Rate</div></div>
     <div class="nav-pill"><div class="nav-pill-val" id="np-lat">—</div><div class="nav-pill-lbl">Last Latency</div></div>
+    <div class="nav-pill"><div class="nav-pill-val c-success" id="np-llm-saved">0</div><div class="nav-pill-lbl">LLM Avoided</div></div>
     <div class="nav-pill"><div class="nav-pill-val" id="np-ghost">0 B</div><div class="nav-pill-lbl">Ghost Mem</div></div>
   </div>
   <div class="nav-right">
@@ -436,6 +478,9 @@ a{color:var(--accent);text-decoration:none}
       <button class="ex-btn" data-q="Can aspirin reduce cardiovascular risk?"><span class="ec">Cardiology</span>Can aspirin reduce cardiovascular risk?</button>
       <button class="ex-btn" data-q="Does exercise improve cognitive function?"><span class="ec">Neuroscience</span>Does exercise improve cognitive function?</button>
       <button class="ex-btn" data-q="Is vitamin D deficiency linked to depression?"><span class="ec">Psychiatry</span>Is vitamin D deficiency linked to depression?</button>
+    </div>
+    <div style="text-align: right; margin-bottom: 8px;">
+      <a href="/test_queries.html" target="_blank" style="font-size: 11px; color: var(--text-s); text-decoration: underline;">📄 View 100+ Test Queries</a>
     </div>
     <div class="q-wrap">
       <textarea class="q-ta" id="q-ta" rows="3" placeholder="Type any scientific question… (Ctrl+Enter to run)"></textarea>
@@ -581,9 +626,11 @@ a{color:var(--accent);text-decoration:none}
           <span class="src-label" id="src-label">—</span>
         </div>
         <div class="ans-chips">
-          <div class="ans-chip">⏱ <span id="ac-total">—</span></div>
-          <div class="ans-chip">📐 <span id="ac-sim">—</span></div>
-          <div class="ans-chip">📄 <span id="ac-docs">—</span></div>
+          <div class="ans-chip" title="Total Latency">⏱ <span id="ac-total">—</span></div>
+          <div class="ans-chip" title="Retrieval Latency">🔍 <span id="ac-retrieval">—</span></div>
+          <div class="ans-chip" title="LLM Latency">🤖 <span id="ac-llm">—</span></div>
+          <div class="ans-chip" title="Similarity">📐 <span id="ac-sim">—</span></div>
+          <div class="ans-chip" title="Docs">📄 <span id="ac-docs">—</span></div>
         </div>
       </div>
       <div class="ans-query" id="ans-query"></div>
@@ -622,10 +669,10 @@ a{color:var(--accent);text-decoration:none}
   <div class="stats-grid">
     <div class="stat-card"><div class="stat-val ca" id="sv-hr">—</div><div class="stat-lbl">Hit Rate</div><div class="stat-sub" id="sv-hm">0H / 0M</div></div>
     <div class="stat-card"><div class="stat-val" id="sv-req">0</div><div class="stat-lbl">Requests</div><div class="stat-sub" id="sv-cold">0 cold calls</div></div>
-    <div class="stat-card"><div class="stat-val cs" id="sv-saved">0</div><div class="stat-lbl">LLM Saved</div><div class="stat-sub" id="sv-ghost">0 ghost hits</div></div>
+    <div class="stat-card"><div class="stat-val cs" id="sv-saved">0</div><div class="stat-lbl">LLM Avoided</div><div class="stat-sub" id="sv-saved-pct">0% saved</div></div>
     <div class="stat-card"><div class="stat-val" id="sv-occ">0/10</div><div class="stat-lbl">Occupancy</div><div class="stat-sub" id="sv-p">p = 0</div></div>
     <div class="stat-card"><div class="stat-val cw" id="sv-lat">—</div><div class="stat-lbl">Last Latency</div><div class="stat-sub" id="sv-sim">sim: —</div></div>
-    <div class="stat-card"><div class="stat-val" id="sv-gmem">0 B</div><div class="stat-lbl">Ghost Mem</div><div class="stat-sub">8 B/entry</div></div>
+    <div class="stat-card"><div class="stat-val" id="sv-gmem">0 B</div><div class="stat-lbl">Ghost Mem</div><div class="stat-sub" id="sv-gcomp">192x compression</div></div>
   </div>
 
   <div class="card charts-card" style="margin-bottom:12px">
@@ -853,6 +900,7 @@ function populateDashboard(r) {
   $('np-req').textContent  = m.total;
   $('np-hr').textContent   = m.hit_rate + '%';
   $('np-lat').textContent  = ms(t.total_ms);
+  $('np-llm-saved').textContent = m.llm_avoided || 0;
   $('np-ghost').textContent = (m.ghost_bytes || 0) + ' B';
 
   // Answer panel
@@ -866,13 +914,15 @@ function populateDashboard(r) {
   const dot = $('src-dot'), lbl = $('src-label');
   if (r.cache_hit) {
     dot.setAttribute('class','src-dot hit');
-    lbl.textContent = `Served from cache (${r.cache_tier})`;
+    lbl.textContent = `Source: Semantic Cache (${r.cache_tier}) • Cache Hit`;
   } else {
     dot.setAttribute('class','src-dot miss');
-    lbl.textContent = 'Generated by LLM + cached';
+    lbl.textContent = `Source: LLM (Cold Storage) • Cache Miss`;
   }
 
   $('ac-total').textContent = ms(t.total_ms);
+  $('ac-retrieval').textContent = ms(r.cache_hit ? t.cache_ms : t.cold_ms);
+  $('ac-llm').textContent = r.cache_hit ? 'skip' : ms(t.llm_ms);
   $('ac-sim').textContent   = r.similarity ? r.similarity.toFixed(4) : '—';
   $('ac-docs').textContent  = r.retrieved_docs > 0 ? r.retrieved_docs + ' docs' : 'cached';
   $('ans-query').textContent = '\u201c' + r.query + '\u201d';
@@ -924,12 +974,13 @@ function populateDashboard(r) {
   $('sv-req').textContent  = m.total;
   $('sv-cold').textContent = m.cold_calls + ' cold calls';
   $('sv-saved').textContent = m.hits;
-  $('sv-ghost').textContent = (m.b1 || 0) + (m.b2 || 0) > 0 ? (m.b1||0)+(m.b2||0) + ' ghost entries' : '—';
+  $('sv-saved-pct').textContent = (m.llm_avoided_pct || 0) + '% saved';
   $('sv-occ').textContent  = a.hot + '/' + a.capacity;
-  $('sv-p').textContent    = 'p = ' + a.p;
+  $('sv-p').textContent    = 'p = ' + a.p + ' | B1=' + (m.b1||0) + ' B2=' + (m.b2||0);
   $('sv-lat').textContent  = ms(t.total_ms);
   $('sv-sim').textContent  = r.similarity ? 'sim: ' + r.similarity.toFixed(3) : 'sim: —';
   $('sv-gmem').textContent = (m.ghost_bytes || 0) + ' B';
+  $('sv-gcomp').textContent = m.ghost_compression ? m.ghost_compression + ' compression' : '192x compression';
 
   // Donut chart
   const circ = 188.5; // 2π×30
@@ -1118,7 +1169,7 @@ $('reset-btn').addEventListener('click', async () => {
     $('reset-btn').style.display = 'none';
     $('replay-btn').style.display = 'none';
     document.querySelectorAll('.ex-btn').forEach(b => b.classList.remove('active'));
-    ['np-req','np-hr','np-lat','sv-hr','sv-req','sv-saved','sv-occ','sv-lat','sv-sim','sv-p','sv-hm','sv-cold','sv-ghost','sv-gmem','arc-cap'].forEach(id => {
+    ['np-req','np-hr','np-lat','np-llm-saved','sv-hr','sv-req','sv-saved','sv-saved-pct','sv-occ','sv-lat','sv-sim','sv-p','sv-hm','sv-cold','sv-gmem','sv-gcomp','arc-cap'].forEach(id => {
       const el = $(id); if (el) el.textContent = id.includes('req') || id.includes('saved') || id.includes('occ') ? '0' : '—';
     });
     ['arc-t1','arc-t2','arc-b1','arc-b2'].forEach(id => { const el=$(id); if(el) el.innerHTML='<span class="arc-empty">empty</span>'; });

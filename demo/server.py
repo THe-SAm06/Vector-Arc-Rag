@@ -28,7 +28,7 @@ _query_log  = []   # last 100 queries for session history
 
 CORPUS_PATH = "data/scifact_corpus_full.json"
 CACHE_CAP   = 10
-SIM_THRESH  = 0.90
+SIM_THRESH  = 0.75
 
 
 # ─── Initialization (runs in background thread) ───────────────────────────────
@@ -38,13 +38,14 @@ def _initialize():
         from dotenv import load_dotenv
         load_dotenv()
 
+        from src.duckdb_cold_storage import DuckDBColdStorage
         from src.rag_coordinator import AdaptiveRAGSystem
         print("  Loading embedding model and corpus (20–30 s) …", flush=True)
         t0 = time.perf_counter()
         rag = AdaptiveRAGSystem(
             cache_capacity   = CACHE_CAP,
             similarity_threshold = SIM_THRESH,
-            data_path        = CORPUS_PATH,
+            cold_storage     = DuckDBColdStorage(),
             ttl_seconds      = 86_400,
         )
         print(f"  ✅ RAG system ready ({time.perf_counter()-t0:.1f} s)", flush=True)
@@ -264,11 +265,25 @@ def _arc_snapshot() -> dict:
 def _metrics_snapshot() -> dict:
     m = rag.metrics
     total = m["total_queries"]
+    hits = m["hits"]
+    misses = m["misses"]
+    ghost_count = len(rag.cache.b1) + len(rag.cache.b2)
+    ghost_bytes = ghost_count * 8  # SimHash: 8 bytes each
+    ghost_full_bytes = ghost_count * 384 * 4  # full float32 vector
+
+    # Cost estimation (Groq Llama-3.3-70B commercial rates)
+    avg_ctx_tokens = 400
+    avg_out_tokens = 150
+    cost_per_call = (avg_ctx_tokens * 0.06 / 1e6) + (avg_out_tokens * 0.20 / 1e6)
+    baseline_cost = total * cost_per_call
+    actual_cost = misses * cost_per_call
+    cost_saved = baseline_cost - actual_cost
+
     return {
         "total":   total,
-        "hits":    m["hits"],
-        "misses":  m["misses"],
-        "hit_rate": round(rag.hit_rate() * 100, 1),
+        "hits":    hits,
+        "misses":  misses,
+        "hit_rate": round(hits / total * 100, 1) if total > 0 else 0.0,
         "cold_calls": m.get("cold_storage_calls", 0),
         "margin_rejects": m.get("margin_rejections", 0),
         "ttl_expires": m.get("ttl_expirations", 0),
@@ -276,8 +291,21 @@ def _metrics_snapshot() -> dict:
         "b2": len(rag.cache.b2),
         "p":  rag.cache.p,
         "hot": len(rag.cache.t1) + len(rag.cache.t2),
-        "ghost_bytes": (len(rag.cache.b1) + len(rag.cache.b2)) * 8,
+        "ghost_bytes": ghost_bytes,
+        "ghost_full_bytes": ghost_full_bytes,
+        "ghost_compression": f"{ghost_full_bytes // max(ghost_bytes,1)}x" if ghost_bytes > 0 else "—",
+        "llm_avoided": hits,
+        "llm_avoided_pct": round(hits / total * 100, 1) if total > 0 else 0.0,
+        "est_cost_saved": round(cost_saved * 1000, 4),  # in millicents for readability
+        "corpus_size": _get_corpus_size(),
     }
+
+
+def _get_corpus_size() -> int:
+    try:
+        return rag.cold_storage.get_corpus_size()
+    except Exception:
+        return 0
 
 
 def _reset_cache():
@@ -301,6 +329,8 @@ class _Handler(BaseHTTPRequestHandler):
         p = self.path.split("?")[0]
         if p in ("/", "/index.html"):
             self._file(DEMO_DIR / "index.html", "text/html; charset=utf-8")
+        elif p == "/test_queries.html":
+            self._file(DEMO_DIR / "test_queries.html", "text/html; charset=utf-8")
         elif p == "/api/status":
             if not _ready.is_set():
                 self._json({"ready": False, "initializing": True})

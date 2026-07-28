@@ -165,7 +165,7 @@ class VectorARC:
 
         return False, None
 
-    def put(self, key: str, payload: Any, query_vector: Optional[np.ndarray] = None) -> None:
+    def put(self, key: str, payload: Any, query_vector: Optional[np.ndarray] = None) -> list:
         """
         Insert a new (key, payload) into the cache.
 
@@ -180,11 +180,17 @@ class VectorARC:
                           SimHash for semantic ghost matching. If None, falls
                           back to extracting from payload["vector"].
 
+        Returns:
+            List of evicted keys (may be empty). Callers can use this to
+            remove evicted entries from external indices (e.g. FAISS).
+
         Time complexity: O(1) amortized.
         """
+        evicted_keys: list = []
+
         # Already in hot cache — caller should use get() instead
         if key in self.t1 or key in self.t2:
-            return
+            return evicted_keys
 
         # Compute SimHash of the new query vector for ghost matching
         vec = query_vector if query_vector is not None else payload.get("vector")
@@ -196,20 +202,24 @@ class VectorARC:
         if b1_hit_key is not None:
             delta = max(1, len(self.b2) // len(self.b1) if self.b1 else 1)
             self.p = min(self.c, self.p + delta)
-            self._replace(key, in_b2=False, simhash=incoming_sh)
+            ev = self._replace(key, in_b2=False, simhash=incoming_sh)
+            if ev is not None:
+                evicted_keys.append(ev)
             del self.b1[b1_hit_key]
             self.t2[key] = payload          # Re-admit directly to frequency tier
-            return
+            return evicted_keys
 
         # ── Ghost Frequency Hit (B2): item was recently evicted from T2 ───────
         b2_hit_key = self._find_ghost_hit(self.b2, key, incoming_sh)
         if b2_hit_key is not None:
             delta = max(1, len(self.b1) // len(self.b2) if self.b2 else 1)
             self.p = max(0, self.p - delta)
-            self._replace(key, in_b2=True, simhash=incoming_sh)
+            ev = self._replace(key, in_b2=True, simhash=incoming_sh)
+            if ev is not None:
+                evicted_keys.append(ev)
             del self.b2[b2_hit_key]
             self.t2[key] = payload          # Re-admit to frequency tier
-            return
+            return evicted_keys
 
         # ── Complete Cache Miss: new item entering the system ─────────────────
         t1_plus_b1 = len(self.t1) + len(self.b1)
@@ -218,19 +228,25 @@ class VectorARC:
             # Directory (T1+B1) is full
             if len(self.t1) < self.c:
                 self.b1.popitem(last=False)  # Drop oldest ghost to make room
-                self._replace(key, in_b2=False, simhash=incoming_sh)
+                ev = self._replace(key, in_b2=False, simhash=incoming_sh)
+                if ev is not None:
+                    evicted_keys.append(ev)
             else:
                 # B1 is empty; directly discard LRU of T1
-                self.t1.popitem(last=False)
+                evicted_key, _ = self.t1.popitem(last=False)
+                evicted_keys.append(evicted_key)
         else:
             total = len(self.t1) + len(self.t2) + len(self.b1) + len(self.b2)
             if total >= self.c:
                 if total == 2 * self.c:
                     self.b2.popitem(last=False)  # Trim oldest B2 ghost
-                self._replace(key, in_b2=False, simhash=incoming_sh)
+                ev = self._replace(key, in_b2=False, simhash=incoming_sh)
+                if ev is not None:
+                    evicted_keys.append(ev)
 
         # New item enters recency tier
         self.t1[key] = payload
+        return evicted_keys
 
     def update_answer(self, key: str, answer: str) -> bool:
         """
@@ -298,7 +314,7 @@ class VectorARC:
                         return ghost_key
         return None
 
-    def _replace(self, key: str, in_b2: bool, simhash: Optional[int] = None) -> None:
+    def _replace(self, key: str, in_b2: bool, simhash: Optional[int] = None) -> Optional[str]:
         """
         Core ARC eviction logic.
 
@@ -312,6 +328,9 @@ class VectorARC:
         Args:
             simhash: The SimHash of the INCOMING query (not the evicted one).
                      The evicted entry's SimHash is computed from its own vector.
+
+        Returns:
+            The key of the evicted entry, or None if nothing was evicted.
         """
         t1_len = len(self.t1)
         evict_from_t1 = self.t1 and (
@@ -324,9 +343,13 @@ class VectorARC:
             evicted_vec = evicted_payload.get("vector") if isinstance(evicted_payload, dict) else None
             ghost_sh = self._simhash(evicted_vec) if evicted_vec is not None else None
             self.b1[evicted_key] = ghost_sh        # Ghost: uint64 SimHash!
+            return evicted_key
 
         elif self.t2:
             evicted_key, evicted_payload = self.t2.popitem(last=False)  # LRU of T2
             evicted_vec = evicted_payload.get("vector") if isinstance(evicted_payload, dict) else None
             ghost_sh = self._simhash(evicted_vec) if evicted_vec is not None else None
             self.b2[evicted_key] = ghost_sh        # Ghost: uint64 SimHash!
+            return evicted_key
+
+        return None

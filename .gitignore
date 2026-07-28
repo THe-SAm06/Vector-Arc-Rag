@@ -1,12 +1,3 @@
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -63,13 +54,41 @@ cover/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# VS Code / IDEs
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Local databases and caches
+*.duckdb
+*.db
+*.sqlite3
+cache_state/
+metrics/
+data/*
+!data/scifact_corpus_full.json
+!data/scifact_corpus.json
+datasets/
+
+# Experimental/Unused scripts
+beir_benchmark.py
+run_validation.py
+evaluate_retrieval.py
+main.py
+presentation.tex
+
+# IDEs and Editors
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+.DS_Store
 
-# Data and metrics (optional, depending on if you want to track them)
-data/
-# metrics/
-cache_state/
+# Logs
+logs/
+*.log

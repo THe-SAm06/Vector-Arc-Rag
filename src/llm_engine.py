@@ -92,11 +92,13 @@ class LLMEngine:
         self.model    = os.getenv("LLM_MODEL", DEFAULT_MODELS.get(self.provider, ""))
 
         if not self.api_key:
-            raise ValueError(
-                f"LLM_API_KEY not set in .env.\n"
-                f"Get a free key from: "
-                f"https://console.groq.com  (recommended — per-minute limits)"
+            logger.warning(
+                "API key not configured.\n"
+                "Please create a .env file and add your API key according to the README."
             )
+            self._key_missing = True
+        else:
+            self._key_missing = False
 
         if self.provider == "gemini":
             self._init_gemini()
@@ -157,14 +159,20 @@ class LLMEngine:
         Returns:
             A concise, context-grounded answer string.
         """
+        if getattr(self, "_key_missing", False):
+            return "API key not configured. Please create a .env file and add your API key according to the README."
+
         prompt_messages = [
             {
                 "role": "system",
                 "content": (
-                    "You are a precise research assistant. "
-                    "Answer the user's query using ONLY the provided context. "
-                    "If the context lacks the answer, say: "
-                    "'I don't have enough information to answer that.'"
+                    "You are a knowledgeable research assistant. "
+                    "Answer the user's query using the provided context. "
+                    "Synthesize information from the context to give a helpful, "
+                    "accurate answer. If the context is only partially relevant, "
+                    "extract whatever useful information you can. "
+                    "Only say 'I don't have enough information' if the context "
+                    "is completely unrelated to the query."
                 ),
             },
             {
